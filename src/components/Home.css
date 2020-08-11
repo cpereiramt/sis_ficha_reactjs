@@ -1,0 +1,65 @@
+#brasao_inicio {
+    position: absolute;
+    width: 140px;
+    height: 138px;
+    left: 617px;
+    top: 70px;
+}
+
+#div_body {
+    position: absolute;
+    width: 1168px;
+    height: 217px;
+    left: 99px;
+    top: 232px;    
+    background: #FFFFFF;
+
+}
+
+#Home_h1 {
+   /* Tela Inicial Sisficha */
+
+
+position: absolute;
+width: 539px;
+height: 47px;
+left: 428px;
+top: 0px;
+
+font-family: IBM Plex Sans Condensed;
+font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 47px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+}
+
+#Home_button {
+    position: absolute;
+    width: 130px;
+    height: 55px;
+    left: 510px;
+    top: 80px;
+    
+    background: #429B34;
+
+    font-family: IBM Plex Sans Condensed;
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 18px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+}
+
