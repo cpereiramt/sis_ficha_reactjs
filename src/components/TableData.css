@@ -1,0 +1,31 @@
+#table{
+    position: absolute;
+    width: 1212px;
+    height: 35px;
+    left: 76px;
+    top: 40px;
+    background: #FBF3F3;
+}
+
+ #table tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 150px;
+}
+
+#table thead tr {
+   display: block;
+}
+
+#table thead {
+  background: black;
+  text-align: center;
+  color:#fff;
+}
+
+#table th, #table td {
+    border: 2px solid black;
+  text-align: center;
+  width: 150px;
+}
