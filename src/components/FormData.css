@@ -1,7 +1,7 @@
 #form_id {
     position: absolute;
     width: 1308px;
-    height: 140px;
+    height: 130px;
     left: 29px;
     top: 170px;
     background: #F1F5F5;
@@ -45,19 +45,22 @@
 .row1 > label {
     margin-right: 10px;
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .row2 > label {
     margin-right: 10px;
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: bold;
 
 }
 
 .row3 > label {
     margin-right: 10px;
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: bold;
 
 }
