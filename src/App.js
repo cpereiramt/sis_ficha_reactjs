@@ -1,9 +1,10 @@
 import React from 'react';
-import Home from './components/Home';
+import Main from './Pages/Main';
+
 function App() {
   return (
     <div>
-     <Home />
+     <Main />
     </div>
   );
 }
