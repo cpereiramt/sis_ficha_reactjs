@@ -1,9 +1,10 @@
 #table{
-    position: absolute;
+    position: relative;
     width: 1212px;
     height: 50px;
     left: 76px;
     top: 20px;
+    font-size: 13px;
     background: #FBF3F3;
 }
 

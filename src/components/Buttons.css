@@ -10,12 +10,10 @@ font-style: normal;
 font-weight: bold;
 font-size: 22px;
 line-height: 29px;
-display: flex;
+display: block;
 align-items: center;
 text-align: center;
-
 color: #FFFFFF;
-
 border: 1px solid #8F7C7C;
 }
 
@@ -31,7 +29,7 @@ font-style: normal;
 font-weight: bold;
 font-size: 22px;
 line-height: 29px;
-display: flex;
+display: block;
 align-items: center;
 text-align: center;
 
@@ -52,7 +50,7 @@ font-style: normal;
 font-weight: bold;
 font-size: 22px;
 line-height: 29px;
-display: flex;
+display: block;
 align-items: center;
 text-align: center;
 

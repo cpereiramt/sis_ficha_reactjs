@@ -1,8 +1,8 @@
 #body-div {
     position: absolute;
-    width: 1366px;
+    width: 110%;
     height: 703px;
-    left: 0px;
+    left: -20px;
     top: 65px;    
     background: #FFFBFB;
 }
