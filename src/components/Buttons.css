@@ -1,0 +1,62 @@
+#btn_cadastrar {
+    position: absolute;
+    width: 112px;
+    height: 42px;
+    left: 439px;
+    top: 460px;    
+    background: #429B34;
+    font-family: IBM Plex Sans Condensed;
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+border: 1px solid #8F7C7C;
+}
+
+#btn_alterar {
+    position: absolute;
+    width: 112px;
+    height: 42px;
+    left: 620px;
+    top: 460px;    
+    background: #B3A741;
+    font-family: IBM Plex Sans Condensed;
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+border: 1px solid #8F7C7C;
+}
+
+#btn_excluir {
+    position: absolute;
+    width: 112px;
+    height: 42px;
+    left: 800px;
+    top: 460px;    
+    background: #C71010;
+    font-family: IBM Plex Sans Condensed;
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+border: 1px solid #8F7C7C;
+}

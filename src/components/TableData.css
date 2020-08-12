@@ -1,9 +1,9 @@
 #table{
     position: absolute;
     width: 1212px;
-    height: 35px;
+    height: 50px;
     left: 76px;
-    top: 40px;
+    top: 20px;
     background: #FBF3F3;
 }
 
@@ -11,7 +11,7 @@
   display:block;
   width: 100%;
   overflow: auto;
-  height: 150px;
+  height: 100px;
 }
 
 #table thead tr {
@@ -24,8 +24,23 @@
   color:#fff;
 }
 
-#table th, #table td {
-    border: 2px solid black;
+#table th {
+   border: 2px solid black;
   text-align: center;
-  width: 150px;
+  width: 141px;
+
 }
+
+#table td {
+    border: 2px solid black;
+   text-align: center;
+   width: 190px;
+ }
+
+
+#table tbody tr:hover{
+    border: 2px solid black;
+   text-align: center;
+   width: 190px;
+   background-color: turquoise;
+ }

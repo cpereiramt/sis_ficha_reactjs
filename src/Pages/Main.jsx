@@ -3,6 +3,8 @@ import './Main.css';
 import TopBar from '../components/TopBar';
 import SearchBar from '../components/SearchBar';
 import TableData from '../components/TableData';
+import FormData from '../components/FormData';
+import Buttons from '../components/Buttons';
 
 function Main() {
     return (
@@ -11,6 +13,10 @@ function Main() {
             <TopBar />
             < SearchBar />
             <TableData />
+            <FormData/>
+            <Buttons style_id="btn_cadastrar" text="Cadastrar"></Buttons>
+            <Buttons style_id="btn_alterar" text="Alterar"></Buttons>
+            <Buttons style_id="btn_excluir" text="Excluir"></Buttons>
             </div>
         </div>
     )
