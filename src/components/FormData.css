@@ -1,0 +1,66 @@
+#form_id {
+    position: absolute;
+    width: 1240px;
+    height: 130px;
+    left: 50px;
+    top: 170px;
+    background: #F1F5F5;
+    border: 2px solid #E6E1E1;
+    padding-top: 50px;
+    padding-left: 40px;
+    padding-bottom: 15px;
+    margin-top: 70px;
+}
+
+#header_form {
+    position: absolute;
+    width: 180px;
+    height: 80px;
+    left: 480px;
+    top: -30px;    
+    font-family: IBM Plex Sans Condensed;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;    
+    color: #000000;
+}
+
+.row1 {
+ height: 38px;
+}
+
+.row2 {
+ height: 38px;
+} 
+
+.row3 {
+    height: 38px;
+}  
+   
+
+.row1 > label {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.row2 > label {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: bold;
+
+}
+
+.row3 > label {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: bold;
+
+}

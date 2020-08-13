@@ -1,0 +1,48 @@
+#table{
+    position: relative;
+    width: 1212px;
+    height: 50px;
+    left: 76px;
+    top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    background: #FBF3F3;
+}
+
+ #table tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 100px;
+}
+
+#table thead tr {
+   display: block;
+}
+
+#table thead {
+  background: black;
+  text-align: center;
+  color:#fff;
+}
+
+#table th {
+   border: 2px solid black;
+  text-align: center;
+  width: 141px;
+
+}
+
+#table td {
+    border: 2px solid black;
+   text-align: center;
+   width: 190px;
+ }
+
+
+#table tbody tr:hover{
+    border: 2px solid black;
+   text-align: center;
+   width: 190px;
+   background-color: turquoise;
+ }
