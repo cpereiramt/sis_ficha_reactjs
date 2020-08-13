@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Main.css';
 import TopBar from '../components/TopBar';
 import SearchBar from '../components/SearchBar';
@@ -7,6 +7,14 @@ import FormData from '../components/FormData';
 import Buttons from '../components/Buttons';
 
 function Main() {
+    
+
+    useEffect(() => {
+        fetch('https://api.npms.io/v2/search?q=react')
+        .then(response => response.json())
+        .then(data => console.log(data))
+     })
+
     return (
         <div>
             <div id="body-div">
