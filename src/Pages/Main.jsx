@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Main.css';
 import TopBar from '../components/TopBar';
 import SearchBar from '../components/SearchBar';
@@ -7,20 +7,20 @@ import FormData from '../components/FormData';
 import Buttons from '../components/Buttons';
 
 function Main() {
-    
+    const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('https://api.npms.io/v2/search?q=react')
+        fetch('http://localhost:3002/fichas/a')
         .then(response => response.json())
-        .then(data => console.log(data))
-     })
+        .then(data => setData(data))
+     },[])
 
     return (
         <div>
-            <div id="body-div">
+            <div id="body-div">                
             <TopBar />
             < SearchBar />
-            <TableData />
+            <TableData result={data} />
             <FormData/>
             <Buttons style_id="btn_cadastrar" text="Cadastrar"></Buttons>
             <Buttons style_id="btn_alterar" text="Alterar"></Buttons>

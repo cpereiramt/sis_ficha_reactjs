@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import './TableData.css'
 
-function TableData() {
+function TableData(props) {
+   const [tableData, setTableData] = useState([]);
+
+   useEffect(() => {
+    setTableData(props.result)
+   },[props.result]);
     return (
         <div>
            <table id="table">
@@ -18,56 +23,16 @@ function TableData() {
                </tr>
           </thead>
            <tbody>
-               <tr>
-                  <td>1</td>
-                  <td>115820</td>
-                  <td> clayton guimaraes leite pereira </td>
-                  <td>15/05/1985</td>
-                  <td>000.000.000-00</td>
-                  <td>17111111</td>
-                  <td>SSP</td>
-                  <td>MT</td>
-               </tr>
-               <tr>
-                  <td>1</td>
-                  <td>115820</td>
-                  <td> clayton pereira 2 </td>
-                  <td>15/05/1985</td>
-                  <td>000.000.000-00</td>
-                  <td>17111111</td>
-                  <td>SSP</td>
-                  <td>MT</td>
-               </tr>
-               <tr>
-                  <td>1</td>
-                  <td>115820</td>
-                  <td> clayton pereira 2 </td>
-                  <td>15/05/1985</td>
-                  <td>000.000.000-00</td>
-                  <td>17111111</td>
-                  <td>SSP</td>
-                  <td>MT</td>
-               </tr>
-               <tr>
-                  <td>1</td>
-                  <td>115820</td>
-                  <td> clayton pereira 2 </td>
-                  <td>15/05/1985</td>
-                  <td>000.000.000-00</td>
-                  <td>17111111</td>
-                  <td>SSP</td>
-                  <td>MT</td>
-               </tr>
-               <tr>
-                  <td>1</td>
-                  <td>115820</td>
-                  <td> clayton pereira 2 </td>
-                  <td>15/05/1985</td>
-                  <td>000.000.000-00</td>
-                  <td>17111111</td>
-                  <td>SSP</td>
-                  <td>MT</td>
-               </tr>
+             {tableData.map(element => <tr>
+                 <td>{element.numficha}</td>
+                 <td>{element.matricula}</td>
+                 <td> {element.nomeservidor} </td>
+                  <td>{element.dtnasc}</td>
+                 <td>{element.cpf}</td>
+             <td>{element.rg}</td>
+                 <td>{element.orgaoexp}</td>
+             <td>{element.uf}</td>
+              </tr>)}
            </tbody>     
            </table> 
         </div>
