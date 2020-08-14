@@ -5,6 +5,7 @@ import SearchBar from '../components/SearchBar';
 import TableData from '../components/TableData';
 import FormData from '../components/FormData';
 import Buttons from '../components/Buttons';
+import Pagination from '../components/Pagination'
 
 function Main() {
     const [data, setData] = useState([]);
@@ -21,6 +22,7 @@ function Main() {
             <TopBar />
             < SearchBar />
             <TableData result={data} />
+            <Pagination />
             <FormData/>
             <Buttons style_id="btn_cadastrar" text="Cadastrar"></Buttons>
             <Buttons style_id="btn_alterar" text="Alterar"></Buttons>
