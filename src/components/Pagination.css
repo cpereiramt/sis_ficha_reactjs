@@ -1,11 +1,11 @@
 #pagination_div {
     margin: auto;
     width: 50%;
-    margin-top: 28px;
+    margin-top: 40px;
 
 }
 
 #selectedButton {
-  background-color: aqua;
+  background-color: turquoise;
 
 }

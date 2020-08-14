@@ -12,7 +12,6 @@ function Main() {
     const [filterLetter, setFilterLetter] = useState("A");
 
     const ChangeLetter = (letter) => {
-      console.log(letter)
       setFilterLetter(letter);      
      }
 
