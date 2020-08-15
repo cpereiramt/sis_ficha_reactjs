@@ -23,7 +23,7 @@ function TableData(props) {
                </tr>
           </thead>
            <tbody>
-             {tableData.map(element => <tr>
+             {tableData.map(element => <tr onClick={() => props.function(element)}>
                  <td>{element.numficha}</td>
                  <td>{element.matricula}</td>
                  <td> {element.nomeservidor} </td>
