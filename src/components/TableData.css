@@ -40,9 +40,13 @@
  }
 
 
-#table tbody tr:hover{
+/* #table tbody tr:hover{
     border: 2px solid black;
    text-align: center;
    width: 190px;
    background-color: turquoise;
+ } */
+
+ #selected_TableRow {  
+  background-color: turquoise;
  }
