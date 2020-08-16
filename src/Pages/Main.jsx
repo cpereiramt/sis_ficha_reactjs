@@ -102,9 +102,10 @@ function Main() {
              <TableData result={data} function={TableDataClick}/> 
             <Pagination function={ChangeLetter} />
             <FormData data={formData} formStatus={formStatus} function={changeFOrmStatusOnCancel}/>
-            <Buttons style_id="btn_cadastrar" text="Cadastrar" function={changeFormStatusClick} formStatus={formStatus}></Buttons>
+            {formStatus === "INITIAL" &&   <> <Buttons style_id="btn_cadastrar" text="Cadastrar" function={changeFormStatusClick} formStatus={formStatus}></Buttons>
             <Buttons style_id="btn_alterar" text="Alterar" function={changeFormStatusClick} formStatus={formStatus} ></Buttons>
-            <Buttons style_id="btn_excluir" text="Excluir" function={changeFormStatusClick} formStatus={formStatus} ></Buttons>
+            <Buttons style_id="btn_excluir" text="Excluir" function={changeFormStatusClick} formStatus={formStatus} ></Buttons> </>}
+          
             </div>
         </div>
     )
