@@ -28,11 +28,11 @@ function FormData(props) {
         setRg(data.rg);
         setOrgaoExp(data.orgaoexp);
         setUf(data.uf);
-        if(props.formStatus === "INITIAL") {
-            setEnabled(true);
+        if(props.formStatus === "ALTERAR" || props.formStatus === 'CADASTRAR') {
+            setEnabled(false);
         }
         else {
-            setEnabled(false); 
+            setEnabled(true); 
         }
     }, [data, props.formStatus ])
 
@@ -113,6 +113,10 @@ function FormData(props) {
                 <option value="MT"> MT </option>
                 </select> 
            </div>
+           {props.formStatus === 'INITIAL' &&  null}
+             {props.formStatus === 'CADASTRAR' && <><button>Salvar registro </button> <button onClick={props.function} >Cancelar</button></>}             
+             {props.formStatus === 'ALTERAR' &&  <><button>Alterar registro </button> <button onClick={props.function}>Cancelar</button></>}             
+             {props.formStatus === 'EXCLUIR' &&  <><button>Excluir registro </button> <button onClick={props.function}>Cancelar</button></>}   
         </div>
     )
 }

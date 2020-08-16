@@ -70,6 +70,23 @@ function Main() {
     
     
     }
+
+   const changeFOrmStatusOnCancel = () =>  {
+    setFormData( {   
+        codlocal: " ",
+        cpf: " ",
+        dtnasc: " ",
+        matricula: ' ',
+        nomemae: " ",
+        nomeservidor: " ",
+        numficha: " ",
+        orgaoexp: " ",
+        rg: " ",
+        uf: " "
+    })
+        setFormStatus('INITIAL');
+    }
+
     useEffect(() => {
         fetch('http://localhost:3002/fichas/' + filterLetter)
         .then(response => response.json())
@@ -84,7 +101,7 @@ function Main() {
             < SearchBar />
              <TableData result={data} function={TableDataClick}/> 
             <Pagination function={ChangeLetter} />
-            <FormData data={formData} formStatus={formStatus}/>
+            <FormData data={formData} formStatus={formStatus} function={changeFOrmStatusOnCancel}/>
             <Buttons style_id="btn_cadastrar" text="Cadastrar" function={changeFormStatusClick} formStatus={formStatus}></Buttons>
             <Buttons style_id="btn_alterar" text="Alterar" function={changeFormStatusClick} formStatus={formStatus} ></Buttons>
             <Buttons style_id="btn_excluir" text="Excluir" function={changeFormStatusClick} formStatus={formStatus} ></Buttons>
