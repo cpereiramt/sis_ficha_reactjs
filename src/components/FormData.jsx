@@ -14,6 +14,8 @@ function FormData(props) {
     const [rg, setRg] = useState();
     const [orgaoExp, setOrgaoExp] = useState();
     const [uf, setUf] = useState();
+    const [enabled, setEnabled] = useState();
+
 
     useEffect(() => {
         setNumFicha(data.numficha);
@@ -26,7 +28,13 @@ function FormData(props) {
         setRg(data.rg);
         setOrgaoExp(data.orgaoexp);
         setUf(data.uf);
-    }, [data])
+        if(props.formStatus === "INITIAL") {
+            setEnabled(true);
+        }
+        else {
+            setEnabled(false); 
+        }
+    }, [data, props.formStatus ])
 
     const changeNumFichaInput = (event) => {
         setNumFicha(event.target.value);
@@ -61,42 +69,47 @@ function FormData(props) {
     
     return (
            <div id="form_id">
-           <div className="row1">
-               <h1 id="header_form">Header da Operação </h1>
+           <div className="row1"> 
+             {console.log(props)} 
+             {props.formStatus === 'INITIAL' &&   <h1  id="header_form"> selecione uma opção </h1>}
+             {props.formStatus === 'CADASTRAR' && <h1  id="header_form"> Cadastro de Ficha </h1>}             
+             {props.formStatus === 'ALTERAR' && <h1  id="header_form"> Alterar Ficha </h1>}             
+             {props.formStatus === 'EXCLUIR' && <h1  id="header_form"> Excluir Ficha </h1>}             
+
                <label htmlFor="NUMFICHA">NUMFICHA</label>
-               <input type="text" name="NUMFICHA" value={numFicha} disabled onChange={changeNumFichaInput} size="5"/> 
+               <input type="text" name="NUMFICHA" value={numFicha} disabled={enabled} onChange={changeNumFichaInput} size="5"/> 
                <label htmlFor="MATRICULA">MATRICULA</label>
-               <input type="text" name="MATRICULA" size="6" value={matricula} disabled onChange={changeMatriculaInput} />
+               <input type="text" name="MATRICULA" size="6" value={matricula}  disabled={enabled} onChange={changeMatriculaInput} />
                <label htmlFor="NOMESERVIDOR">NOME SERVIDOR</label>
-               <input type="text" name="NOMESERVIDOR" size="33" value={nomeServidor} disabled onChange={changeNomeServidorInput} />
+               <input type="text" name="NOMESERVIDOR" size="33" value={nomeServidor}  disabled={enabled} onChange={changeNomeServidorInput} />
                <label htmlFor="NOMEMAE">NOME MAE</label>
-               <input type="text" name="NOMEMAE" size="33" value={nomeMae} disabled onChange={changeNomeMae} />
+               <input type="text" name="NOMEMAE" size="33" value={nomeMae}  disabled={enabled} onChange={changeNomeMae} />
            </div>
            <div className="row2">
                <label htmlFor="DTNASC"> DTNASC </label>
-               <input type="text" name="DTNASC" size="4"  value={dtNasc} disabled onChange={changeDtNascInput} />
+               <input type="text" name="DTNASC" size="4"  value={dtNasc}  disabled={enabled} onChange={changeDtNascInput} />
                <label htmlFor="CPF"> CPF </label>
-               <input type="text" name="CPF" size="7" value={cpf} disabled onChange={changeCPFInput} />
+               <input type="text" name="CPF" size="7" value={cpf}  disabled={enabled} onChange={changeCPFInput} />
                <label htmlFor="CODLOCAL">CODLOCAL</label>
-               <select name="CODLOCAL" value={codLocal} disabled onChange={changeCodLocalSelect}  >
+               <select name="CODLOCAL" value={codLocal}  disabled={enabled} onChange={changeCodLocalSelect}  >
                 <option value="1">1</option>
                 </select> 
                 <label htmlFor="ESTANTE">ESTANTE</label>
-                <select name="ESTANTE" disabled>
+                <select name="ESTANTE"  disabled={enabled}>
                 <option value="1">1</option>
                 </select> 
                 <label htmlFor="PRATELEIRA">PRATELEIRA</label>
-                <select name="PRATELEIRA" disabled>
+                <select name="PRATELEIRA"  disabled={enabled}>
                 <option value="1">1</option>
                 </select>              
            </div>
            <div className="row3">
            <label htmlFor="RG">RG</label>
-               <input type="text" size="4" value={rg} disabled onChange={changeRgInput} />
+               <input type="text" size="4" value={rg}  disabled={enabled} onChange={changeRgInput} />
                <label htmlFor="ORGAOEXP" >ORGAOEXP</label>
-               <input type="text" size="1" value={orgaoExp} disabled onChange={changeOrgaoExpInput} />
+               <input type="text" size="1" value={orgaoExp}  disabled={enabled} onChange={changeOrgaoExpInput} />
            <label htmlFor="UF" >UF</label>
-                <select name="UF" value={uf} disabled onChange={changesetUfSelect} >
+                <select name="UF" value={uf}  disabled={enabled} onChange={changesetUfSelect} >
                 <option value="MT"> MT </option>
                 </select> 
            </div>
