@@ -15,7 +15,7 @@ function FormData(props) {
     const [codLocal, setCodLocal] = useState();
     const [rg, setRg] = useState();
     const [orgaoExp, setOrgaoExp] = useState();
-    const [uf, setUf] = useState();
+    const [uf, setUf] = useState([]);
     const [enabled, setEnabled] = useState();
     const [estante, setEstantes] = useState([]);
 
@@ -29,7 +29,9 @@ function FormData(props) {
         setCodLocal(data.codlocal);
         setRg(data.rg);
         setOrgaoExp(data.orgaoexp);
-        setUf(data.uf);
+        setUf(['AC','AL','AP','AM','BA','CE','DF','ES',
+        'GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS',
+        'RO','RR','SC','SP','SE','TO']);
         if(props.formStatus === "ALTERAR" || props.formStatus === 'CADASTRAR') {
             setEnabled(false);
         }
@@ -104,24 +106,20 @@ function FormData(props) {
                 {estante.map(element => 
                  <option value={element.codlocal}>{`CodLocal : ${element.codlocal} || Estante: ${element.numestante} || Prateleira: ${element.numprateleira} `}</option>
                 )}               
-                </select> 
-            {/*     <label htmlFor="ESTANTE">ESTANTE</label>
-                <select name="ESTANTE"  disabled={enabled}>
-                <option value="1">1</option>
-                </select> 
-                <label htmlFor="PRATELEIRA">PRATELEIRA</label>
-                <select name="PRATELEIRA"  disabled={enabled}>
-                <option value="1">1</option>
-                </select>   */}            
+                </select>        
            </div>
            <div className="row3">
            <label htmlFor="RG">RG</label>
                <input type="text" size="4" value={rg}  disabled={enabled} onChange={changeRgInput} />
                <label htmlFor="ORGAOEXP" >ORGAOEXP</label>
                <input type="text" size="1" value={orgaoExp}  disabled={enabled} onChange={changeOrgaoExpInput} />
-           <label htmlFor="UF" >UF</label>
-                <select name="UF" value={uf}  disabled={enabled} onChange={changesetUfSelect} >
-                <option value="MT"> MT </option>
+                {console.log(uf + "Teste")}
+                <select name="UF" value={uf} select disabled={enabled} onChange={changesetUfSelect} >
+                <option value=" ">Selecione a UF </option>)
+                {uf.map((element,i) => 
+                   <option value={element}>{element}</option> 
+                )
+                }         
                 </select> 
            </div>
            {props.formStatus === 'INITIAL' &&  null}
