@@ -36,9 +36,11 @@ function Main() {
      }
 
     const changeFormStatusClick = (event) => {
-     console.log(event.target.name);
      switch (event.target.name) {
          case "Cadastrar":
+            const allRows= document.getElementsByTagName('tr');
+            const allRowsActive = Array.from(allRows); 
+            allRowsActive.map(element => element.removeAttribute('id', 'selected_TableRow'))
              setFormData( {   
              codlocal: " ",
              cpf: " ",
@@ -74,6 +76,9 @@ function Main() {
     }
 
    const changeFOrmStatusOnCancel = () =>  {
+    const allRows= document.getElementsByTagName('tr');
+    const allRowsActive = Array.from(allRows); 
+    allRowsActive.map(element => element.removeAttribute('id', 'selected_TableRow'))
     setFormData( {   
         codlocal: " ",
         cpf: " ",
@@ -102,7 +107,7 @@ function Main() {
             <TopBar />
             < SearchBar />
             <TableData result={data} function={TableDataClick}/> 
-            <Pagination function={ChangeLetter} />
+            <Pagination function={ChangeLetter} functionTable={TableDataClick} />
             <FormData data={formData} formStatus={formStatus} function={changeFOrmStatusOnCancel}/>
             {formStatus === "INITIAL" &&   <> <Buttons style_id="btn_cadastrar" text="Cadastrar" function={changeFormStatusClick} formStatus={formStatus}></Buttons>
             <Buttons style_id="btn_alterar" text="Alterar" function={changeFormStatusClick} formStatus={formStatus} ></Buttons>

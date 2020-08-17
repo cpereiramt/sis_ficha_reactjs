@@ -77,7 +77,6 @@ function FormData(props) {
         setUf([event.target.value]);   
     }
     let uf_select = document.getElementsByName('UF');
-    let codLocal_select = document.getElementsByName('CODLOCAL');
 
     return (
            <div id="form_id">

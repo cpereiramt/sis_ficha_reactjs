@@ -8,9 +8,24 @@ function Pagination(props) {
         const allButtons = document.getElementById('pagination_div');              
         const buttonActive = Array.from(allButtons.childNodes); 
         buttonActive.map(element => element.removeAttribute('id', 'selectedButton'))
+        const allRows= document.getElementsByTagName('tr');
+        const allRowsActive = Array.from(allRows); 
+        allRowsActive.map(element => element.removeAttribute('id', 'selected_TableRow'))
         const selectedButton =  document.getElementsByName(event.target.name);
         selectedButton[0].setAttribute('id','selectedButton');
         console.log(props.function(selectedButton[0].name));
+        props.functionTable({   
+            codlocal: " ",
+            cpf: " ",
+            dtnasc: " ",
+            matricula: ' ',
+            nomemae: " ",
+            nomeservidor: " ",
+            numficha: " ",
+            orgaoexp: " ",
+            rg: " ",
+            uf: " "
+        })
      }
 
     return (
