@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {CreateRegister,AlterRegister,DeleteRegister} from '../helpers/functions';
 import './FormData.css';
 
 function FormData(props) {
@@ -15,7 +16,7 @@ function FormData(props) {
     const [orgaoExp, setOrgaoExp] = useState();
     const [uf, setUf] = useState();
     const [enabled, setEnabled] = useState();
-
+    const [estante, setEstantes] = useState([]);
 
     useEffect(() => {
         setNumFicha(data.numficha);
@@ -35,6 +36,14 @@ function FormData(props) {
             setEnabled(true); 
         }
     }, [data, props.formStatus ])
+
+    useEffect(() => {
+        if(props.formStatus === 'ALTERAR' || props.formStatus === 'EXCLUIR' || props.formStatus === "CADASTRAR") {
+            fetch('http://localhost:3002/estantes')
+            .then(response => response.json())
+            .then(estantesData => setEstantes(estantesData))     
+    }
+   }, [props.formStatus])
 
     const changeNumFichaInput = (event) => {
         setNumFicha(event.target.value);
@@ -70,12 +79,10 @@ function FormData(props) {
     return (
            <div id="form_id">
            <div className="row1"> 
-             {console.log(props)} 
              {props.formStatus === 'INITIAL' &&   <h1  id="header_form"> selecione uma opção </h1>}
              {props.formStatus === 'CADASTRAR' && <h1  id="header_form"> Cadastro de Ficha </h1>}             
              {props.formStatus === 'ALTERAR' && <h1  id="header_form"> Alterar Ficha </h1>}             
              {props.formStatus === 'EXCLUIR' && <h1  id="header_form"> Excluir Ficha </h1>}             
-
                <label htmlFor="NUMFICHA">NUMFICHA</label>
                <input type="text" name="NUMFICHA" value={numFicha} disabled={enabled} onChange={changeNumFichaInput} size="5"/> 
                <label htmlFor="MATRICULA">MATRICULA</label>
@@ -92,16 +99,19 @@ function FormData(props) {
                <input type="text" name="CPF" size="7" value={cpf}  disabled={enabled} onChange={changeCPFInput} />
                <label htmlFor="CODLOCAL">CODLOCAL</label>
                <select name="CODLOCAL" value={codLocal}  disabled={enabled} onChange={changeCodLocalSelect}  >
-                <option value="1">1</option>
+                <option value="0">selecione uma opção </option>
+                {estante.map(element => 
+                 <option value={element.codlocal}>{`CodLocal : ${element.codlocal} || Estante: ${element.numestante} || Prateleira: ${element.numprateleira} `}</option>
+                )}               
                 </select> 
-                <label htmlFor="ESTANTE">ESTANTE</label>
+            {/*     <label htmlFor="ESTANTE">ESTANTE</label>
                 <select name="ESTANTE"  disabled={enabled}>
                 <option value="1">1</option>
                 </select> 
                 <label htmlFor="PRATELEIRA">PRATELEIRA</label>
                 <select name="PRATELEIRA"  disabled={enabled}>
                 <option value="1">1</option>
-                </select>              
+                </select>   */}            
            </div>
            <div className="row3">
            <label htmlFor="RG">RG</label>
@@ -114,9 +124,24 @@ function FormData(props) {
                 </select> 
            </div>
            {props.formStatus === 'INITIAL' &&  null}
-             {props.formStatus === 'CADASTRAR' && <><button>Salvar registro </button> <button onClick={props.function} >Cancelar</button></>}             
-             {props.formStatus === 'ALTERAR' &&  <><button>Alterar registro </button> <button onClick={props.function}>Cancelar</button></>}             
-             {props.formStatus === 'EXCLUIR' &&  <><button>Excluir registro </button> <button onClick={props.function}>Cancelar</button></>}   
+             {props.formStatus === 'CADASTRAR' && 
+             <><button onClick={() => CreateRegister({numFicha,
+                                     matricula,
+                                     nomeServidor,
+                                     nomeMae,
+                                     dtNasc,
+                                     cpf,
+                                     codLocal,
+                                     rg,
+                                     orgaoExp,
+                                     uf })}>Salvar registro </button> 
+             <button onClick={props.function} >Cancelar</button></>}             
+             {props.formStatus === 'ALTERAR' &&  
+             < ><button>Alterar registro </button> 
+             <button onClick={props.function}>Cancelar</button></>}             
+             {props.formStatus === 'EXCLUIR' &&  
+             <><button>Excluir registro </button> 
+             <button onClick={props.function}>Cancelar</button></>}   
         </div>
     )
 }
