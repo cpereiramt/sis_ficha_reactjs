@@ -1,6 +1,6 @@
 
 
-function urlencodeFormData(fd){
+/* function urlencodeFormData(fd){
     var s = '';
     function encode(s){ return encodeURIComponent(s).replace(/%20/g,'+'); }
     for(var pair of fd.entries()){
@@ -9,7 +9,8 @@ function urlencodeFormData(fd){
         }
     }
     return s;
-}
+} */
+
 function CreateRegister(data) {
   alert(data.numFicha);
   var prms = new URLSearchParams({
@@ -24,12 +25,25 @@ function CreateRegister(data) {
         body: prms
 })}
 
-function AlterRegister(id) {
-
+function AlterRegister(data) {
+  var prms = new URLSearchParams({
+    ...data
+  });
+  console.log(data.numFicha);
+  console.log(prms.toString());
+  fetch('http://localhost:3002/alterar/fichas/' + data.numFicha, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: prms
+  });
 }
 
-function DeleteRegister(id) {
-      
+function DeleteRegister(data) {
+  fetch('http://localhost:3002/delete/fichas/' + data.numFicha, {
+    method: 'DELETE',
+    });
 }
 
 

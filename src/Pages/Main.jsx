@@ -8,6 +8,7 @@ import Buttons from '../components/Buttons';
 import Pagination from '../components/Pagination'
 
 function Main() {
+    const [isloading, setIsLoading ] = useState(false);
     const [data, setData] = useState([]);
     const [filterLetter, setFilterLetter] = useState("A");
     const [formStatus, setFormStatus ] = useState("INITIAL");
@@ -30,6 +31,7 @@ function Main() {
      }
 
      const TableDataClick = (data) => {
+       setFormStatus("INITIAL");
         setFormData(data);
      }
 
@@ -88,24 +90,24 @@ function Main() {
     }
 
     useEffect(() => {
-        fetch('http://localhost:3002/fichas/' + filterLetter)
-        .then(response => response.json())
-        .then(data => setData(data))
-     },[filterLetter])
-     
+         fetch('http://localhost:3002/fichas/' + filterLetter)
+        .then(response =>   response.json())
+        .then(data => setData(data))          
+     },[filterLetter])     
   
     return (
         <div>
-            <div id="body-div">                
+            <div id="body-div">
+             {isloading ? <h1>Carregando ...</h1> : <>
             <TopBar />
             < SearchBar />
-             <TableData result={data} function={TableDataClick}/> 
+            <TableData result={data} function={TableDataClick}/> 
             <Pagination function={ChangeLetter} />
             <FormData data={formData} formStatus={formStatus} function={changeFOrmStatusOnCancel}/>
             {formStatus === "INITIAL" &&   <> <Buttons style_id="btn_cadastrar" text="Cadastrar" function={changeFormStatusClick} formStatus={formStatus}></Buttons>
             <Buttons style_id="btn_alterar" text="Alterar" function={changeFormStatusClick} formStatus={formStatus} ></Buttons>
             <Buttons style_id="btn_excluir" text="Excluir" function={changeFormStatusClick} formStatus={formStatus} ></Buttons> </>}
-          
+            </> }                 
             </div>
         </div>
     )

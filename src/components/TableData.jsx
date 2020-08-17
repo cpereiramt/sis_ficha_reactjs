@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import './TableData.css'
+import {dateFormat } from '../helpers/formatData'
+import FormData from './FormData';
 
 function TableData(props) {
    const [tableData, setTableData] = useState([]);
@@ -36,7 +38,7 @@ function TableData(props) {
                  <td>{element.numficha}</td>
                  <td>{element.matricula}</td>
                  <td> {element.nomeservidor} </td>
-                  <td>{element.dtnasc}</td>
+                  <td>{dateFormat(element.dtnasc)}</td>
                  <td>{element.cpf}</td>
              <td>{element.rg}</td>
                  <td>{element.orgaoexp}</td>

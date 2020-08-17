@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {CreateRegister,AlterRegister,DeleteRegister} from '../helpers/functions';
+import {CreateRegister,AlterRegister,DeleteRegister} from '../helpers/ApiHelpers';
+import {dateFormat } from '../helpers/formatData'
 import './FormData.css';
 
 function FormData(props) {
@@ -97,7 +98,7 @@ function FormData(props) {
                <input type="text" name="DTNASC" size="4"  value={dtNasc}  disabled={enabled} onChange={changeDtNascInput} />
                <label htmlFor="CPF"> CPF </label>
                <input type="text" name="CPF" size="7" value={cpf}  disabled={enabled} onChange={changeCPFInput} />
-               <label htmlFor="CODLOCAL">CODLOCAL</label>
+               <label htmlFor="CODLOCAL">Arquivando em:</label>
                <select name="CODLOCAL" value={codLocal}  disabled={enabled} onChange={changeCodLocalSelect}  >
                 <option value="0">selecione uma opção </option>
                 {estante.map(element => 
@@ -137,10 +138,19 @@ function FormData(props) {
                                      uf })}>Salvar registro </button> 
              <button onClick={props.function} >Cancelar</button></>}             
              {props.formStatus === 'ALTERAR' &&  
-             < ><button>Alterar registro </button> 
+             < ><button onClick={() => AlterRegister({numFicha,
+                matricula,
+                nomeServidor,
+                nomeMae,
+                dtNasc,
+                cpf,
+                codLocal,
+                rg,
+                orgaoExp,
+                uf })}>Alterar registro </button> 
              <button onClick={props.function}>Cancelar</button></>}             
              {props.formStatus === 'EXCLUIR' &&  
-             <><button>Excluir registro </button> 
+             <><button onClick={() => DeleteRegister({numFicha})}>Excluir registro </button> 
              <button onClick={props.function}>Cancelar</button></>}   
         </div>
     )
