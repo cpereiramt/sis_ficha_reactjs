@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {CreateRegister,AlterRegister,DeleteRegister} from '../helpers/ApiHelpers';
 import './FormData.css';
+import {validateData } from '../helpers/Validation';
 
 function FormData(props) {
  
@@ -45,7 +46,19 @@ function FormData(props) {
             .then(estantesData => setEstantes(estantesData))   
    }, [props.formStatus])
     
-   const saveRegister = () => {     
+   const saveRegister = () => { 
+       
+      const result = validateData({numFicha,
+        matricula,
+        nomeServidor,
+        nomeMae,
+        dtNasc,
+        cpf,
+        codLocal,
+        rg,
+        orgaoExp,
+        uf });
+       if (result ) {
     CreateRegister({numFicha,
         matricula,
         nomeServidor,
@@ -57,6 +70,29 @@ function FormData(props) {
         orgaoExp,
         uf })
         props.setFormStatus('INITIAL');
+   
+    }
+    else {
+       alert("dados inseridos incorretamente !");
+    }
+    }
+
+   const AlterarRegistro = () => {
+
+    AlterRegister({numFicha,
+        matricula,
+        nomeServidor,
+        nomeMae,
+        dtNasc,
+        cpf,
+        codLocal,
+        rg,
+        orgaoExp,
+        uf })
+   }
+
+   const ExcluirRegistro = () => {
+    DeleteRegister({numFicha})
    }
     const changeNumFichaInput = (event) => {
         setNumFicha(event.target.value);
@@ -75,6 +111,7 @@ function FormData(props) {
     }
     const changeCPFInput = (event) => {
         setCPF(event.target.value);
+        console.log(cpf)
     }
     const changeCodLocalSelect = (event) => {
         setCodLocal(event.target.value);
@@ -108,9 +145,9 @@ function FormData(props) {
            </div>
            <div className="row2">
                <label htmlFor="DTNASC"> DTNASC </label>
-               <input type="text" name="DTNASC" size="4"  value={dtNasc}  disabled={enabled} onChange={changeDtNascInput} />
+               <input type="date" placeholder="dd/mm/yyyy" name="DTNASC" size="4" value={dtNasc}  disabled={enabled} onChange={changeDtNascInput} />
                <label htmlFor="CPF"> CPF </label>
-               <input type="text" name="CPF" size="7" value={cpf}  disabled={enabled} onChange={changeCPFInput} />
+               <input type="text" name="CPF" size="10" value={cpf}  disabled={enabled} onChange={changeCPFInput} />
                <label htmlFor="CODLOCAL">Arquivando em:</label>
                <select name="CODLOCAL" value={codLocal}  disabled={enabled} onChange={changeCodLocalSelect}  >
                 <option value="0">selecione uma opção </option>
@@ -146,19 +183,10 @@ function FormData(props) {
              <><button onClick={() =>  saveRegister()}>Salvar registro </button> 
              <button onClick={props.function} >Cancelar</button></>}             
              {props.formStatus === 'ALTERAR' &&  
-             < ><button onClick={() => AlterRegister({numFicha,
-                matricula,
-                nomeServidor,
-                nomeMae,
-                dtNasc,
-                cpf,
-                codLocal,
-                rg,
-                orgaoExp,
-                uf })}>Alterar registro </button> 
+             < ><button onClick={() => AlterarRegistro() }>Alterar registro </button> 
              <button onClick={props.function}>Cancelar</button></>}             
              {props.formStatus === 'EXCLUIR' &&  
-             <><button onClick={() => DeleteRegister({numFicha})}>Excluir registro </button> 
+             <><button onClick={() => ExcluirRegistro()}>Excluir registro </button> 
              <button onClick={props.function}>Cancelar</button></>}   
         </div>
     )
