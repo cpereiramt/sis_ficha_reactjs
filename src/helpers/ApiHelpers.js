@@ -12,38 +12,74 @@
 } */
 
 function CreateRegister(data) {
-  alert(data.numFicha);
   var prms = new URLSearchParams({
     ...data
   });
-  console.log(prms.toString());
     fetch('http://localhost:3002/inserir/ficha', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: prms
-})}
+}).then((res) => 
+ { if (res.ok) {
+  return res.json();
+} else {
+  throw new Error('Bad REQUEST');
+} })
+.then((data) =>  {
+  alert('Dados inseridos com sucesso !')  
+  console.log(data)
+})
+.catch((err)=>   {
+  console.log(err)
+  alert('Não salvo, favor verifcar as informações inseridas !')   
+})
+}
 
 function AlterRegister(data) {
   var prms = new URLSearchParams({
     ...data
   });
-  console.log(data.numFicha);
-  console.log(prms.toString());
   fetch('http://localhost:3002/alterar/fichas/' + data.numFicha, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
     body: prms
-  });
+  }).then((res) => 
+  { if (res.ok) {
+   return res.json();
+ } else {
+   throw new Error('Bad REQUEST');
+ } })
+ .then((data) =>  {
+   alert('Dados Alterados com sucesso !')  
+   console.log(data)
+ })
+ .catch((err)=>   {
+   console.log(err)
+   alert('Nada Alterado, favor verifcar as informações inseridas !')   
+ })
 }
 
 function DeleteRegister(data) {
   fetch('http://localhost:3002/delete/fichas/' + data.numFicha, {
     method: 'DELETE',
-    });
+    }).then((res) => 
+    { if (res.ok) {
+     return res.json();
+   } else {
+     throw new Error('Bad REQUEST');
+   } })
+   .then((data) =>  {
+     alert('Dados Excluidos com sucesso !')  
+     console.log(data)
+   })
+   .catch((err)=>   {
+     console.log(err)
+     alert('Nada Excluido, favor verifcar as informações inseridas !'); 
+   })
 }
 
 

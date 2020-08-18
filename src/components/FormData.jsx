@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {CreateRegister,AlterRegister,DeleteRegister} from '../helpers/ApiHelpers';
-import {dateFormat } from '../helpers/formatData'
 import './FormData.css';
 
 function FormData(props) {
@@ -18,7 +17,7 @@ function FormData(props) {
     const [uf, setUf] = useState([]);
     const [enabled, setEnabled] = useState();
     const [estante, setEstantes] = useState([]);
-
+ 
     useEffect(() => {
         setNumFicha(data.numficha);
         setMatricula(data.matricula);
@@ -40,12 +39,25 @@ function FormData(props) {
         }
     }, [data, props.formStatus ])
 
-    useEffect(() => {
+    useEffect(() => {        
             fetch('http://localhost:3002/estantes')
             .then(response => response.json())
             .then(estantesData => setEstantes(estantesData))   
    }, [props.formStatus])
-
+    
+   const saveRegister = () => {     
+    CreateRegister({numFicha,
+        matricula,
+        nomeServidor,
+        nomeMae,
+        dtNasc,
+        cpf,
+        codLocal,
+        rg,
+        orgaoExp,
+        uf })
+        props.setFormStatus('INITIAL');
+   }
     const changeNumFichaInput = (event) => {
         setNumFicha(event.target.value);
     }
@@ -131,16 +143,7 @@ function FormData(props) {
            </div>
            {props.formStatus === 'INITIAL' &&  null}
              {props.formStatus === 'CADASTRAR' && 
-             <><button onClick={() => CreateRegister({numFicha,
-                                     matricula,
-                                     nomeServidor,
-                                     nomeMae,
-                                     dtNasc,
-                                     cpf,
-                                     codLocal,
-                                     rg,
-                                     orgaoExp,
-                                     uf })}>Salvar registro </button> 
+             <><button onClick={() =>  saveRegister()}>Salvar registro </button> 
              <button onClick={props.function} >Cancelar</button></>}             
              {props.formStatus === 'ALTERAR' &&  
              < ><button onClick={() => AlterRegister({numFicha,
