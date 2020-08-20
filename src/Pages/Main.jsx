@@ -8,8 +8,10 @@ import Buttons from '../components/Buttons';
 import Pagination from '../components/Pagination'
 
 function Main() {
+    const [isloading, setIsLoading ] = useState(false);
     const [data, setData] = useState([]);
     const [filterLetter, setFilterLetter] = useState("A");
+    const [formStatus, setFormStatus ] = useState("INITIAL");
     const [formData, setFormData] = useState(
         {   codlocal: " ",
             cpf: " ",
@@ -28,27 +30,89 @@ function Main() {
       setFilterLetter(letter);      
      }
 
-    useEffect(() => {
-        fetch('http://localhost:3002/fichas/' + filterLetter)
-        .then(response => response.json())
-        .then(data => setData(data))
-     },[filterLetter])
-     
      const TableDataClick = (data) => {
+       setFormStatus("INITIAL");
         setFormData(data);
      }
 
+    const changeFormStatusClick = (event) => {
+     switch (event.target.name) {
+         case "Cadastrar":
+            const allRows= document.getElementsByTagName('tr');
+            const allRowsActive = Array.from(allRows); 
+            allRowsActive.map(element => element.removeAttribute('id', 'selected_TableRow'))
+             setFormData( {   
+             codlocal: " ",
+             cpf: " ",
+             dtnasc: " ",
+             matricula: ' ',
+             nomemae: " ",
+             nomeservidor: " ",
+             numficha: " ",
+             orgaoexp: " ",
+             rg: " ",
+             uf: " "
+         })
+            setFormStatus("CADASTRAR");
+             break;
+         case "Alterar":
+             if(formData.numficha === " " && formData.nomeservidor === " " && formData.cpf === " " ) {
+                 alert("selecione um registro para Alterar ")
+             } else {
+            setFormStatus("ALTERAR");
+             }
+             break;
+        case "Excluir":
+            if(formData.numficha === " " && formData.nomeservidor === " " && formData.cpf === " " ) {
+                alert("selecione um registro para Excluir ")
+            } else {
+             setFormStatus("EXCLUIR");
+            }
+             break;     
+        
+     }
+    
+    
+    }
+
+   const changeFOrmStatusOnCancel = () =>  {
+    const allRows= document.getElementsByTagName('tr');
+    const allRowsActive = Array.from(allRows); 
+    allRowsActive.map(element => element.removeAttribute('id', 'selected_TableRow'))
+    setFormData( {   
+        codlocal: " ",
+        cpf: " ",
+        dtnasc: " ",
+        matricula: ' ',
+        nomemae: " ",
+        nomeservidor: " ",
+        numficha: " ",
+        orgaoexp: " ",
+        rg: " ",
+        uf: " "
+    })
+        setFormStatus('INITIAL');
+    }
+
+    useEffect(() => {
+         fetch('http://localhost:3002/fichas/' + filterLetter)
+        .then(response =>   response.json())
+        .then(data => setData(data))          
+     },[filterLetter])     
+  
     return (
         <div>
-            <div id="body-div">                
+            <div id="body-div">
+             {isloading ? <h1>Carregando ...</h1> : <>
             <TopBar />
             < SearchBar />
-             <TableData result={data} function={TableDataClick}/> 
-            <Pagination function={ChangeLetter} />
-            <FormData data={formData}/>
-            <Buttons style_id="btn_cadastrar" text="Cadastrar"></Buttons>
-            <Buttons style_id="btn_alterar" text="Alterar"></Buttons>
-            <Buttons style_id="btn_excluir" text="Excluir"></Buttons>
+            <TableData result={data} function={TableDataClick}/> 
+            <Pagination function={ChangeLetter} functionTable={TableDataClick} />
+            <FormData data={formData} formStatus={formStatus} setFormStatus={setFormStatus} function={changeFOrmStatusOnCancel}/>
+            {formStatus === "INITIAL" &&   <> <Buttons style_id="btn_cadastrar" text="Cadastrar" function={changeFormStatusClick} formStatus={formStatus}></Buttons>
+            <Buttons style_id="btn_alterar" text="Alterar" function={changeFormStatusClick} formStatus={formStatus} ></Buttons>
+            <Buttons style_id="btn_excluir" text="Excluir" function={changeFormStatusClick} formStatus={formStatus} ></Buttons> </>}
+            </> }                 
             </div>
         </div>
     )
