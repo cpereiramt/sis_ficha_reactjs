@@ -99,7 +99,7 @@ function Main() {
         .then(data => { 
             setIsLoading(false);
             return setData(data);                   
-        })          
+        })
      },[filterLetter])     
   
     return (
