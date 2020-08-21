@@ -51,3 +51,8 @@
  #selected_TableRow {  
   background-color: turquoise;
  }
+
+ #loading-indicator {
+   align-self: center;
+   justify-self: center;
+ }

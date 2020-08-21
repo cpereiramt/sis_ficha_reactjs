@@ -92,14 +92,25 @@ function Main() {
 
     useEffect(() => {
          fetch('http://localhost:3002/fichas/' + filterLetter)
-        .then(response =>   response.json())
-        .then(data => setData(data))          
+        .then(response =>
+            {
+            setIsLoading(true);
+           return response.json()})
+        .then(data => { 
+            setIsLoading(false);
+            return setData(data);                   
+        })          
      },[filterLetter])     
   
     return (
         <div>
             <div id="body-div">
-             {isloading ? <h1>Carregando ...</h1> : <>
+             {isloading 
+             ? <> <TopBar />
+             <TableData loading={isloading}/>
+             <h1> </h1>
+             </> 
+             : <>
             <TopBar />
             <TableData result={data} function={TableDataClick}/> 
             <Pagination function={ChangeLetter} functionTable={TableDataClick} />
