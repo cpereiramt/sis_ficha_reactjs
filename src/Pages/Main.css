@@ -3,6 +3,16 @@
     width: 110%;
     height: 703px;
     left: -20px;
-    top: 65px;    
     background: #FFFBFB;
+    border: 2px solid blue;
+}
+
+#button-body {
+    position: absolute;
+    border:2px solid brown;
+    margin-top: 10%;
+    margin-left: 25%;
+    padding-left: 5%;
+    width: 50%;
+    height: 20%;
 }

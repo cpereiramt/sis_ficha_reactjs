@@ -1,9 +1,10 @@
+
+
 #btn_cadastrar {
     position: absolute;
     width: 112px;
     height: 42px;
-    left: 439px;
-    top: 460px;    
+    left: 10px;  
     background: #429B34;
     font-family: IBM Plex Sans Condensed;
 font-style: normal;
@@ -21,8 +22,7 @@ border: 1px solid #8F7C7C;
     position: absolute;
     width: 112px;
     height: 42px;
-    left: 620px;
-    top: 460px;    
+    left: 150px;  
     background: #B3A741;
     font-family: IBM Plex Sans Condensed;
 font-style: normal;
@@ -42,8 +42,7 @@ border: 1px solid #8F7C7C;
     position: absolute;
     width: 112px;
     height: 42px;
-    left: 800px;
-    top: 460px;    
+    left: 300px;
     background: #C71010;
     font-family: IBM Plex Sans Condensed;
 font-style: normal;
@@ -53,8 +52,6 @@ line-height: 29px;
 display: block;
 align-items: center;
 text-align: center;
-
 color: #FFFFFF;
-
 border: 1px solid #8F7C7C;
 }

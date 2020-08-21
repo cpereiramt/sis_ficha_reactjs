@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Main.css';
 import TopBar from '../components/TopBar';
-import SearchBar from '../components/SearchBar';
 import TableData from '../components/TableData';
 import FormData from '../components/FormData';
 import Buttons from '../components/Buttons';
@@ -68,11 +67,8 @@ function Main() {
             } else {
              setFormStatus("EXCLUIR");
             }
-             break;     
-        
-     }
-    
-    
+             break;
+     }    
     }
 
    const changeFOrmStatusOnCancel = () =>  {
@@ -95,23 +91,34 @@ function Main() {
     }
 
     useEffect(() => {
-         fetch('http://172.16.104.97:3002/fichas/' + filterLetter)
-        .then(response =>   response.json())
-        .then(data => setData(data))          
+         fetch('http://localhost:3002/fichas/' + filterLetter)
+        .then(response =>
+            {
+            setIsLoading(true);
+           return response.json()})
+        .then(data => { 
+            setIsLoading(false);
+            return setData(data);                   
+        })
      },[filterLetter])     
   
     return (
         <div>
             <div id="body-div">
-             {isloading ? <h1>Carregando ...</h1> : <>
+             {isloading 
+             ? <> <TopBar />
+             <TableData loading={isloading}/>
+             <h1> </h1>
+             </> 
+             : <>
             <TopBar />
-            < SearchBar />
             <TableData result={data} function={TableDataClick}/> 
             <Pagination function={ChangeLetter} functionTable={TableDataClick} />
             <FormData data={formData} formStatus={formStatus} setFormStatus={setFormStatus} function={changeFOrmStatusOnCancel}/>
-            {formStatus === "INITIAL" &&   <> <Buttons style_id="btn_cadastrar" text="Cadastrar" function={changeFormStatusClick} formStatus={formStatus}></Buttons>
+            {formStatus === "INITIAL" &&  
+             <div id="button-body"> <Buttons style_id="btn_cadastrar" text="Cadastrar" function={changeFormStatusClick} formStatus={formStatus}></Buttons>
             <Buttons style_id="btn_alterar" text="Alterar" function={changeFormStatusClick} formStatus={formStatus} ></Buttons>
-            <Buttons style_id="btn_excluir" text="Excluir" function={changeFormStatusClick} formStatus={formStatus} ></Buttons> </>}
+            <Buttons style_id="btn_excluir" text="Excluir" function={changeFormStatusClick} formStatus={formStatus} ></Buttons> </div>}
             </> }                 
             </div>
         </div>

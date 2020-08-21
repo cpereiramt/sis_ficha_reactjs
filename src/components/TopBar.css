@@ -1,19 +1,24 @@
+#topbar-body {
+  border: 10px solid yellow;
+  width: 100%;
+  height: 11%;
+  background-color: rgb(157, 158, 160);
+}
+
 #userPhoto {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 4%;
+    height: 8%;
+    margin-top: 0.5%;
     left: 1156px;
-    top: -70px;
-
 }
 
 #userName {
     position: absolute;
-    width: 131px;
-    height: 43px;
-    left: 1220px;
-    top: -75px;
- 
+    width: 4%;
+    height: 3%;
+    left: 84%;
+    top: 3%; 
     font-family: IBM Plex Sans Condensed;
     font-style: normal;
     font-weight: 600;

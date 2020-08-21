@@ -34,16 +34,20 @@ function TableData(props) {
                </tr>
           </thead>
            <tbody>
-             {tableData.map(element => <tr onClick={(event) => clickHandle(element,event) }>
-                 <td>{element.numficha}</td>
-                 <td>{element.matricula}</td>
-                 <td> {element.nomeservidor} </td>
-                  <td>{dateFormat(element.dtnasc)}</td>
-                 <td>{element.cpf}</td>
-             <td>{element.rg}</td>
-                 <td>{element.orgaoexp}</td>
-             <td>{element.uf}</td>
-              </tr>)}
+               {props.loading 
+                ? <h1 id="loading-indicator">carregando ... </h1> 
+                : tableData.map(element => <tr onClick={(event) => clickHandle(element,event) }>
+                <td>{element.numficha}</td>
+                <td>{element.matricula}</td>
+                <td> {element.nomeservidor} </td>
+                 <td>{dateFormat(element.dtnasc)}</td>
+                <td>{element.cpf}</td>
+            <td>{element.rg}</td>
+                <td>{element.orgaoexp}</td>
+            <td>{element.uf}</td>
+             </tr>)} 
+               
+             
            </tbody>     
            </table> 
         </div>
