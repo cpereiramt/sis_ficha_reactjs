@@ -13,19 +13,17 @@
     left: 99px;
     top: 232px;    
     background: #FFFFFF;
+    border: 2px solid red;
 
 }
 
 #Home_h1 {
    /* Tela Inicial Sisficha */
-
-
 position: absolute;
 width: 539px;
 height: 47px;
 left: 428px;
 top: 0px;
-
 font-family: IBM Plex Sans Condensed;
 font-style: normal;
 font-weight: 600;

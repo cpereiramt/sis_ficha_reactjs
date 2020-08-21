@@ -1,4 +1,4 @@
-function validateData(data ) {
+function validateData(data) {
    const validation_info = {
        error_message: "",
        error_field:"",
@@ -10,8 +10,6 @@ function validateData(data ) {
    } else {
        validation_info.is_ok = false;
    }
-
-
    return validation_info.is_ok;
   }
  

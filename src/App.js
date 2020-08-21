@@ -1,8 +1,9 @@
 import React from 'react';
 import Main from './Pages/Main';
-import Home from './components/Home';
+import Home from './Pages/Home';
 import NotFound from './Pages/NotFound';
 import {useRoutes} from 'hookrouter';
+import './app.css';
 
 function App() {
   const routes = {

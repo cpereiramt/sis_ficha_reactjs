@@ -128,7 +128,7 @@ function FormData(props) {
     let uf_select = document.getElementsByName('UF');
 
     return (
-           <div id="form_id">
+           <form id="form_id">
            <div className="row1"> 
              {props.formStatus === 'INITIAL' &&   <h1  id="header_form"> selecione uma opção </h1>}
              {props.formStatus === 'CADASTRAR' && <h1  id="header_form"> Cadastro de Ficha </h1>}             
@@ -188,7 +188,7 @@ function FormData(props) {
              {props.formStatus === 'EXCLUIR' &&  
              <><button onClick={() => ExcluirRegistro()}>Excluir registro </button> 
              <button onClick={props.function}>Cancelar</button></>}   
-        </div>
+        </form>
     )
 }
 

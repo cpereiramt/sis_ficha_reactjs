@@ -16,7 +16,7 @@ function Home() {
            <img id="brasao_inicio" src={brasao} alt=""/>
            <div id="div_body">
            <h1 id="Home_h1">Tela Inicial Sisficha !</h1>
-           <button id="Home_button" onClick={() => redirect() }>Login With Google</button>
+           <button id="Home_button" onClick={() => redirect()}>Login With Google</button>
            </div>
         </div>
     )
