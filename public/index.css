@@ -1,8 +1,9 @@
-#root {
-    /* margin: 0; */
-      position: absolute;
-      width:99%;
-      height: 98%;
-      background: #b8bcbd;
-      border: 2px solid green;
-  }
+body {
+  display: flex;
+  background: #b8bcbd;
+  height:96vh;
+  border: 2px dashed green;
+  justify-content: center;
+  align-items: center;
+}
+
