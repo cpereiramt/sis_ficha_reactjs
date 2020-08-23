@@ -5,7 +5,7 @@
   background-color: rgb(157, 158, 160);
   padding: 0.2rem;
   width: 99vw;
-  height: 2rem;
+  height: 2.7rem;
 }
 
 #topbar-section {
@@ -16,8 +16,8 @@
 }
 
 #userPhoto {
-  width: 3vw;
-  height: 3h;
+  width: 2vw;
+  height: 4vh;
 }
 
 #userName {
