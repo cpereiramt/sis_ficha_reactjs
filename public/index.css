@@ -5,18 +5,16 @@ body {
   background: #b8bcbd;
   width: 99.5vw;
   height:99vh;
-  align-items: stretch;
-  justify-content: stretch;
+  align-items: center;
+  justify-content: center;
   border: 2px dashed green;
-  flex-basis: 0;  
 }
 
 
 #root {
-  flex-basis: 0;
+  display: flex;
   width: 100vw;
   height:99vh;
   justify-content: center;
   align-items: center;
-  background: #ffffff;
-}
+  background-color: burlywood;}

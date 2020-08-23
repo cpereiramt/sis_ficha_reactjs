@@ -4,12 +4,15 @@
     align-items: center;
     background: #C4C4C4;
     width: 60%;
+    height: 7.5vh;
+    margin: 0.60rem;
+    max-height: 50px;
 }
 
 #search_label {
     font-family: IBM Plex Sans Condensed;
-    font-size: 1.4vw;
-    width: 12%;
+    font-size: 1.7vw;
+    width: 12vw;
     font-style: normal;
     font-weight: 600;
     color: #000000;
@@ -30,6 +33,6 @@
 
 
 #icon_search {
-    width: 5vw;
-    height: 6vh;
+    width: 2vw;
+    height: 3vh;
 }

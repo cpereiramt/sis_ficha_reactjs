@@ -106,7 +106,8 @@ function Main() {
        
             <div id="body-div">
                 <TopBar />
-             {/* {isloading 
+                <TableData result={data} function={TableDataClick} />
+       {/*       {isloading 
              ? <> <TopBar />
              <TableData loading={isloading}/>
              <h1> </h1>
@@ -120,7 +121,7 @@ function Main() {
              <div id="button-body"> <Buttons style_id="btn_cadastrar" text="Cadastrar" function={changeFormStatusClick} formStatus={formStatus}></Buttons>
             <Buttons style_id="btn_alterar" text="Alterar" function={changeFormStatusClick} formStatus={formStatus} ></Buttons>
             <Buttons style_id="btn_excluir" text="Excluir" function={changeFormStatusClick} formStatus={formStatus} ></Buttons> </div>}
-            </> }    */}              
+            </> }  */}       
             </div>
         
     )

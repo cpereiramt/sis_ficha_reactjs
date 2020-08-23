@@ -1,6 +1,5 @@
 #home_body {
-display: flex;    
-width: 10rem;
+display: flex;
 }
 
 #brasao_inicio {
@@ -11,13 +10,12 @@ width: 10rem;
 
 #div_body { 
     display: flex;
-    padding: 0.20rem;
+    padding: 0.25rem;
     justify-content: space-between;
+    align-content: center;
     background: #FFFFFF;
     border: 2px solid red;
-    width: 30rem;
 }
-
 #Home_h1 {
    /* Tela Inicial Sisficha */
 font-family: IBM Plex Sans Condensed;

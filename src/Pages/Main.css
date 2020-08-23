@@ -1,7 +1,9 @@
 #body-div {
     display: flex;
-    justify-content: stretch;
+    height: 100vh;
+    flex-direction: column;
     background: #FFFBFB;
+    column-gap: 100px;
 }
 
 #button-body {
