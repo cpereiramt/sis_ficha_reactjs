@@ -7,10 +7,13 @@ import './TopBar.css';
 function TopBar() {
     return (
         <div id="topbar-body">
-                      < SearchBar />
-         <img id="userPhoto" src={userPhoto} alt=""/> 
+       < SearchBar />
+        <div id="topbar-section">
+          <img id="userPhoto" src={userPhoto} alt=""/> 
           <h2 id="userName"> Username </h2>
         </div>
+        </div>
+ 
     )
 }
 

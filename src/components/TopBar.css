@@ -1,31 +1,28 @@
 #topbar-body {
-  border: 10px solid yellow;
-  width: 100%;
-  height: 11%;
+  display: flex;
+  justify-content: space-around;
   background-color: rgb(157, 158, 160);
+  padding: 0.2rem;
+  width: 99vw;
+  height: 2rem;
+}
+
+#topbar-section {
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #userPhoto {
-    position: absolute;
-    width: 4%;
-    height: 8%;
-    margin-top: 0.5%;
-    left: 1156px;
+  width: 3vw;
+  height: 3h;
 }
 
 #userName {
-    position: absolute;
-    width: 4%;
-    height: 3%;
-    left: 84%;
-    top: 3%; 
     font-family: IBM Plex Sans Condensed;
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 26px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    font-size: 2vw;
     color: #000000;
 }

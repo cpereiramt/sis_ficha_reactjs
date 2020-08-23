@@ -1,9 +1,22 @@
 body {
   display: flex;
+  margin: auto 0;
+  display: flex;
   background: #b8bcbd;
-  height:96vh;
+  width: 99.5vw;
+  height:99vh;
+  align-items: stretch;
+  justify-content: stretch;
   border: 2px dashed green;
-  justify-content: center;
-  align-items: center;
+  flex-basis: 0;  
 }
 
+
+#root {
+  flex-basis: 0;
+  width: 100vw;
+  height:99vh;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}

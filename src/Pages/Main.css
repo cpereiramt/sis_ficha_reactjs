@@ -1,14 +1,10 @@
 #body-div {
-    position: absolute;
-    width: 110%;
-    height: 703px;
-    left: -20px;
+    display: flex;
+    justify-content: stretch;
     background: #FFFBFB;
-    border: 2px solid blue;
 }
 
 #button-body {
-    position: absolute;
     border:2px solid brown;
     margin-top: 10%;
     margin-left: 25%;
