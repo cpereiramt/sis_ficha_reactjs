@@ -1,14 +1,12 @@
 #body-div {
-    position: absolute;
-    width: 110%;
-    height: 703px;
-    left: -20px;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
     background: #FFFBFB;
-    border: 2px solid blue;
+    column-gap: 100px;
 }
 
 #button-body {
-    position: absolute;
     border:2px solid brown;
     margin-top: 10%;
     margin-left: 25%;

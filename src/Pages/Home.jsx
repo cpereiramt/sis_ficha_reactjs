@@ -12,7 +12,7 @@ function Home() {
         setPage(1);
     }, [])
     return (
-        <div>
+        <div id="home-body">
            <img id="brasao_inicio" src={brasao} alt=""/>
            <div id="div_body">
            <h1 id="Home_h1">Tela Inicial Sisficha !</h1>

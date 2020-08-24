@@ -1,11 +1,19 @@
 #pagination_div {
+    display: flex;
+    width: 30vw;
+    font-size: 10rem;
     margin: auto;
-    width: 50%;
-    margin-top: 40px;
-
+    height: 10vh;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 #selectedButton {
   background-color: turquoise;
+}
 
+#button_pagination_div {
+ display: flex;
+ margin-top: 10px;
+ justify-content: center;
 }

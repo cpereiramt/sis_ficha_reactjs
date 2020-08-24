@@ -19,7 +19,7 @@ function TableData(props) {
    }
 
     return (
-        <div>
+        <div id="table_div">
            <table id="table">
            <thead>
                <tr>

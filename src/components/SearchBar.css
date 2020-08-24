@@ -1,54 +1,38 @@
 #search_background {
-    position: absolute;
-    width: 610px;
-    height: 50px;
-    left: 387px;
-    margin-top: 1%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     background: #C4C4C4;
+    width: 60%;
+    height: 7.5vh;
+    margin: 0.60rem;
+    max-height: 50px;
 }
 
 #search_label {
-    position: absolute;
-    width: 106px;
-    height: 24px;
-    left: 8px;
     font-family: IBM Plex Sans Condensed;
+    font-size: 1.7vw;
+    width: 12vw;
     font-style: normal;
     font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-    display: flex;
-    align-items: center;
-    text-align: center;
     color: #000000;
 }
 
 #combo_box_search {
-    position: absolute;
-    width: 127px;
-    height: 24px;
-    left: 118px;
-    top: 15px;
     background: #FFFFFF;
     border: 2px solid #F4EEEE;
-    box-sizing: border-box;
+    width: 23%;
 }
 
 #input_search {
-    position: absolute;
-    width: 300px;
-    height: 24px;
-    left: 258px;
-    top: 15px;
     background: #FFFFFF;
     border: 2px solid #F4EEEE;
-    box-sizing: border-box;
+    width: 35%;
 }
 
+
+
 #icon_search {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 570px;
-    top: 15px;
+    width: 2vw;
+    height: 3vh;
 }

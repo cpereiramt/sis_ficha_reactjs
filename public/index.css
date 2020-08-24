@@ -1,8 +1,20 @@
+body {
+  display: flex;
+  margin: auto 0;
+  display: flex;
+  background: #b8bcbd;
+  width: 99.5vw;
+  height:99vh;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed green;
+}
+
+
 #root {
-    /* margin: 0; */
-      position: absolute;
-      width:99%;
-      height: 98%;
-      background: #b8bcbd;
-      border: 2px solid green;
-  }
+  display: flex;
+  width: 100vw;
+  height:99vh;
+  justify-content: center;
+  align-items: center;
+  background-color: burlywood;}
