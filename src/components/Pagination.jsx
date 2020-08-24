@@ -31,9 +31,11 @@ function Pagination(props) {
     return (
     
         <div id="pagination_div">
+            <div id="button_pagination_div">
             {letters.map((buttonE,i) => <button name={buttonE}  onClick={(event) => handleClick(event)}> 
                 {buttonE} 
                 </button>)}
+            </div>
        </div>
     )
 }

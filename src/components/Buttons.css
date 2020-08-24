@@ -1,57 +1,41 @@
 
+#button-body {
+    display: flex;
+    border: 3px solid #8F7C7C;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: stretch;
+    height: 8vh;
+}
 
 #btn_cadastrar {
-    position: absolute;
-    width: 112px;
-    height: 42px;
-    left: 10px;  
-    background: #429B34;
-    font-family: IBM Plex Sans Condensed;
-font-style: normal;
-font-weight: bold;
-font-size: 22px;
-line-height: 29px;
-display: block;
-align-items: center;
-text-align: center;
-color: #FFFFFF;
-border: 1px solid #8F7C7C;
+  background: #429B34;
+  font-family: IBM Plex Sans Condensed;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  color: #FFFFFF;
+ 
 }
 
 #btn_alterar {
     position: absolute;
-    width: 112px;
-    height: 42px;
-    left: 150px;  
     background: #B3A741;
     font-family: IBM Plex Sans Condensed;
 font-style: normal;
 font-weight: bold;
 font-size: 22px;
-line-height: 29px;
-display: block;
-align-items: center;
-text-align: center;
-
 color: #FFFFFF;
-
 border: 1px solid #8F7C7C;
 }
 
 #btn_excluir {
     position: absolute;
-    width: 112px;
-    height: 42px;
-    left: 300px;
     background: #C71010;
     font-family: IBM Plex Sans Condensed;
 font-style: normal;
 font-weight: bold;
 font-size: 22px;
-line-height: 29px;
-display: block;
-align-items: center;
-text-align: center;
 color: #FFFFFF;
 border: 1px solid #8F7C7C;
 }

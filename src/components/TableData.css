@@ -5,7 +5,7 @@
 }
 
 #table{
-   margin-top: 5vh;
+   margin-top: 4vh;
    margin-left: 1.2vw;
     font-size: 1vw;
     width: 97vw;
@@ -16,7 +16,7 @@
  #table tbody{
   display:block;
   overflow: auto;
-  height: 30vh;
+  height: 29vh;
 }
 
 #table thead tr {
