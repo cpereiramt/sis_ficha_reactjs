@@ -15,7 +15,7 @@ function CreateRegister(data) {
   var prms = new URLSearchParams({
     ...data
   });
-    fetch('http://localhost:3002/inserir/ficha', {
+    fetch('http://172.16.104.97:3002/inserir/ficha', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -41,7 +41,7 @@ function AlterRegister(data) {
   var prms = new URLSearchParams({
     ...data
   });
-  fetch('http://localhost:3002/alterar/fichas/' + data.numFicha, {
+  fetch('http://172.16.104.97:3002/alterar/fichas/' + data.numFicha, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -64,7 +64,7 @@ function AlterRegister(data) {
 }
 
 function DeleteRegister(data) {
-  fetch('http://localhost:3002/delete/fichas/' + data.numFicha, {
+  fetch('http://172.16.104.97:3002/delete/fichas/' + data.numFicha, {
     method: 'DELETE',
     }).then((res) => 
     { if (res.ok) {

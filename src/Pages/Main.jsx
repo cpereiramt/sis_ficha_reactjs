@@ -91,7 +91,7 @@ function Main() {
     }
 
     useEffect(() => {
-         fetch('http://localhost:3002/fichas/' + filterLetter)
+         fetch('http://172.16.104.97:3002/fichas/' + filterLetter)
         .then(response =>
             {
             setIsLoading(true);
