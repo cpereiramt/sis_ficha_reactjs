@@ -1,0 +1,5 @@
+{
+    "domain": "{dev-sdl90am8.us.auth0.com}",
+    "clientId": "{Q2O2HkMAL90AP475VJfXixTeCK81yW61}",
+    "audience":"https://dev-sdl90am8.us.auth0.com/api/v2/"
+  }
