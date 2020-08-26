@@ -8,7 +8,7 @@ import './app.css';
 function App() {
   const routes = {
     '/': () => <Home />,
-    '/TelaPrincipal': () => <Main />,
+    '/TelaPrincipal': (props) => <Main data={props} />,
    
 };
 const routeResult = useRoutes(routes);
