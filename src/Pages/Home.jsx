@@ -13,26 +13,34 @@ function Home(props) {
     useEffect(() => {
         setPage(1);
     }, []) */
-    const { loginWithRedirect } = useAuth0();
+    const { loginWithRedirect, error , logout} = useAuth0();
     const { user, isAuthenticated } = useAuth0();
     const [userLogged, setUserLogged ] = useState();
     const [isAuth, setIsAuth] = useState();
 
-
+/* 
     useEffect(() => {
         setUserLogged(user);
         setIsAuth(isAuthenticated);
-    }, [isAuthenticated])
+    }, [isAuth]) */
+    const handleLogin = async () => {
+        
+        await loginWithRedirect()
+    }
 
     return (
         <div id="home-body">
-           { isAuth 
+           { isAuthenticated 
            ? navigate('/TelaPrincipal',false)
-                     :<> <img id="brasao_inicio" src={brasao} alt=""/>
+           : <> 
+           <img id="brasao_inicio" src={brasao} alt=""/>
            <div id="div_body">
            <h1 id="Home_h1">Tela Inicial Sisficha !</h1>
-           <button id="Home_button" onClick={() => loginWithRedirect()}>Login</button>
-           </div> </> }
+           <button id="Home_button" onClick={() => handleLogin()}>Login</button>
+           </div>  {console.log(error)}</> 
+              
+
+           }
            
         </div>
     )
