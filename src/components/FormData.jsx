@@ -129,11 +129,13 @@ function FormData(props) {
 
     return (
            <form id="form_id">
-           <div className="row1"> 
+             <div className="headRow">
              {props.formStatus === 'INITIAL' &&   <h1  id="header_form"> selecione uma opção </h1>}
              {props.formStatus === 'CADASTRAR' && <h1  id="header_form"> Cadastro de Ficha </h1>}             
              {props.formStatus === 'ALTERAR' && <h1  id="header_form"> Alterar Ficha </h1>}             
-             {props.formStatus === 'EXCLUIR' && <h1  id="header_form"> Excluir Ficha </h1>}             
+             {props.formStatus === 'EXCLUIR' && <h1  id="header_form"> Excluir Ficha </h1>}    
+             </div>
+           <div className="row1">                   
                <label htmlFor="NUMFICHA">NUMFICHA</label>
                <input type="text" name="NUMFICHA" value={numFicha} disabled={enabled} onChange={changeNumFichaInput} size="5"/> 
                <label htmlFor="MATRICULA">MATRICULA</label>
