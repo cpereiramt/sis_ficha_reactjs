@@ -139,9 +139,9 @@ function FormData(props) {
                <label htmlFor="MATRICULA">MATRICULA</label>
                <input type="text" name="MATRICULA" size="6" value={matricula}  disabled={enabled} onChange={changeMatriculaInput} />
                <label htmlFor="NOMESERVIDOR">NOME SERVIDOR</label>
-               <input type="text" name="NOMESERVIDOR" size="60" value={nomeServidor}  disabled={enabled} onChange={changeNomeServidorInput} />
+               <input type="text" name="NOMESERVIDOR" size="45" value={nomeServidor}  disabled={enabled} onChange={changeNomeServidorInput} />
                <label htmlFor="NOMEMAE">NOME MAE</label>
-               <input type="text" name="NOMEMAE" size="60" value={nomeMae}  disabled={enabled} onChange={changeNomeMae} />
+               <input type="text" name="NOMEMAE" size="45" value={nomeMae}  disabled={enabled} onChange={changeNomeMae} />
            </div>
            <div className="row2">
                <label htmlFor="DTNASC"> DTNASC </label>
