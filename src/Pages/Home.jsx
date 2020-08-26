@@ -24,8 +24,7 @@ function Home(props) {
         setIsAuth(isAuthenticated);
     }, [isAuth]) */
     const handleLogin = async () => {
-        
-        await loginWithRedirect()
+        await loginWithRedirect();
     }
 
     return (
@@ -37,11 +36,8 @@ function Home(props) {
            <div id="div_body">
            <h1 id="Home_h1">Tela Inicial Sisficha !</h1>
            <button id="Home_button" onClick={() => handleLogin()}>Login</button>
-           </div>  {console.log(error)}</> 
-              
-
-           }
-           
+           </div>  {console.log(error)}</>
+           }           
         </div>
     )
 }

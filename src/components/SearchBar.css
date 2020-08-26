@@ -21,7 +21,7 @@
 #combo_box_search {
     background: #FFFFFF;
     border: 2px solid #F4EEEE;
-    width: 23%;
+    width: 35%;
 }
 
 #input_search {
@@ -33,6 +33,6 @@
 
 
 #icon_search {
-    width: 2vw;
-    height: 3vh;
+    width: 1.1vw;
+    height: 2.1vh;
 }

@@ -1,18 +1,16 @@
 #form_id {
-    margin-top: 2vh;
-    padding: 1vw;
     margin: auto;
+   padding-left: 100px;
+    padding: 1vw;
     display: flex;
-    margin-top: 1.5vh;
-    margin-bottom: 1vh;
-    height: 100vh;
-    width: 70vw;
+    height: 32vh;
+    width: 95vw;
     flex-wrap: wrap;
     background: #F1F5F5;
     border: 2px solid #E6E1E1;
     flex-direction: column;
     justify-content: center;
-    border:6px solid purple;
+    align-items: center;
 }
 
 #header_form {
@@ -21,37 +19,44 @@
     font-weight: 600;
     font-size: 20px; 
     color: #000000;
+    align-self: center;
 }
 
 .row1 {
+    height: 12vh;
 }
 
 .row2 {
-
+    height: 6vh;
 } 
 
 .row3 {
-
+    height: 8vh;
 }  
-   
 
 .row1 > label {
     font-size: 13px;
     font-weight: bold;
+    margin-right: 1vh;
+    margin-left: 1vh;
 }
 
 .row2 > label {
     font-size: 13px;
     font-weight: bold;
-
+    margin-right: 1vh;
+    margin-left: 1vh;
 }
 
 .row3 > label {
     font-size: 13px;
     font-weight: bold;
+    margin-right: 1vh;
+    margin-left: 1vh;
 }
 
 input {
  font-weight: bold;
-
+ margin-right: 1vh;
+ margin-left: 1vh;
 }

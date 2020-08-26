@@ -16,7 +16,7 @@ function TopBar(props) {
         <div id="topbar-section">
           <img id="userPhoto" src={props.user.picture}  alt=""/> 
           <h2 id="userName"> {props.user.name} </h2>
-          <button onClick={() => logout({ returnTo: window.location.origin })}>Sair </button>
+          <button id="logout_button" onClick={() => logout({ returnTo: window.location.origin })}>Sair </button>
         </div>
         </div>
  

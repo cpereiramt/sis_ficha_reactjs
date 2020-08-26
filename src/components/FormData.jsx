@@ -139,15 +139,13 @@ function FormData(props) {
                <label htmlFor="MATRICULA">MATRICULA</label>
                <input type="text" name="MATRICULA" size="6" value={matricula}  disabled={enabled} onChange={changeMatriculaInput} />
                <label htmlFor="NOMESERVIDOR">NOME SERVIDOR</label>
-               <input type="text" name="NOMESERVIDOR" size="33" value={nomeServidor}  disabled={enabled} onChange={changeNomeServidorInput} />
+               <input type="text" name="NOMESERVIDOR" size="60" value={nomeServidor}  disabled={enabled} onChange={changeNomeServidorInput} />
                <label htmlFor="NOMEMAE">NOME MAE</label>
-               <input type="text" name="NOMEMAE" size="33" value={nomeMae}  disabled={enabled} onChange={changeNomeMae} />
+               <input type="text" name="NOMEMAE" size="60" value={nomeMae}  disabled={enabled} onChange={changeNomeMae} />
            </div>
            <div className="row2">
                <label htmlFor="DTNASC"> DTNASC </label>
                <input type="date" placeholder="dd/mm/yyyy" name="DTNASC" size="4" value={dtNasc}  disabled={enabled} onChange={changeDtNascInput} />
-               <label htmlFor="CPF"> CPF </label>
-               <input type="text" name="CPF" size="10" value={cpf}  disabled={enabled} onChange={changeCPFInput} />
                <label htmlFor="CODLOCAL">Arquivando em:</label>
                <select name="CODLOCAL" value={codLocal}  disabled={enabled} onChange={changeCodLocalSelect}  >
                 <option value="0">selecione uma opção </option>
@@ -157,6 +155,8 @@ function FormData(props) {
                 </select>        
            </div>
            <div className="row3">
+           <label htmlFor="CPF"> CPF </label>
+               <input type="text" name="CPF" size="10" value={cpf}  disabled={enabled} onChange={changeCPFInput} />
            <label htmlFor="RG">RG</label>
                <input type="text" size="4" value={rg}  disabled={enabled} onChange={changeRgInput} />
                <label htmlFor="ORGAOEXP" >ORGAOEXP</label>
