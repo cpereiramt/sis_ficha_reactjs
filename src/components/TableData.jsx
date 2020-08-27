@@ -35,7 +35,7 @@ function TableData(props) {
           </thead>
            <tbody>
                {props.loading 
-                ? <h1 id="loading-indicator">carregando ... </h1> 
+                ? <div id="loader-container"><h1 id="loading-indicator"> </h1> </div>
                 : tableData.map(element => <tr onClick={(event) => clickHandle(element,event) }>
                 <td>{element.numficha}</td>
                 <td>{element.matricula}</td>

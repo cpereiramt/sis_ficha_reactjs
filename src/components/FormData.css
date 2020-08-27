@@ -26,40 +26,40 @@
 .row1 {
     display: flex;
     flex-direction: row;
-    height: 4vh;
+    height: 3vh;
 }
 
 .row2 {
     display: flex;
     flex-direction: row;
-    height: 4vh;
-    margin-top: 1vh;
+    height: 3vh;
+    margin-top: 4vh;
  
 } 
 
 .row3 {
     display: flex;
     flex-direction: row;
-    height: 4vh;
-    margin-top: 1vh;
+    height: 3vh;
+    margin-top: 3vh;
 }  
 
 .row1 > label {
-    font-size: 13px;
+    font-size: 1vw;
     font-weight: bold;
     margin-right: 1vh;
     margin-left: 1vh;
 }
 
 .row2 > label {
-    font-size: 13px;
+    font-size: 1vw;
     font-weight: bold;
     margin-right: 1vh;
     margin-left: 1vh;
 }
 
 .row3 > label {
-    font-size: 13px;
+    font-size: 1vw;
     font-weight: bold;
     margin-right: 1vh;
     margin-left: 1vh;
