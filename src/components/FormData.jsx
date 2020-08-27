@@ -141,9 +141,9 @@ function FormData(props) {
                <label htmlFor="MATRICULA">MATRICULA</label>
                <input type="text" name="MATRICULA" size="6" value={matricula}  disabled={enabled} onChange={changeMatriculaInput} />
                <label htmlFor="NOMESERVIDOR">NOME SERVIDOR</label>
-               <input type="text" name="NOMESERVIDOR" size="45" value={nomeServidor}  disabled={enabled} onChange={changeNomeServidorInput} />
+               <input type="text" name="NOMESERVIDOR" size="30" value={nomeServidor}  disabled={enabled} onChange={changeNomeServidorInput} />
                <label htmlFor="NOMEMAE">NOME MAE</label>
-               <input type="text" name="NOMEMAE" size="45" value={nomeMae}  disabled={enabled} onChange={changeNomeMae} />
+               <input type="text" name="NOMEMAE" size="30" value={nomeMae}  disabled={enabled} onChange={changeNomeMae} />
            </div>
            <div className="row2">
                <label htmlFor="DTNASC"> DTNASC </label>
@@ -180,6 +180,7 @@ function FormData(props) {
                 }        
                 </select> 
            </div>
+           <div className="row4">
            {props.formStatus === 'INITIAL' &&  null}
              {props.formStatus === 'CADASTRAR' && 
              <><button onClick={() =>  saveRegister()}>Salvar registro </button> 
@@ -189,7 +190,8 @@ function FormData(props) {
              <button onClick={props.function}>Cancelar</button></>}             
              {props.formStatus === 'EXCLUIR' &&  
              <><button onClick={() => ExcluirRegistro()}>Excluir registro </button> 
-             <button onClick={props.function}>Cancelar</button></>}   
+             <button onClick={props.function} id="button_form_cancel">Cancelar</button></>} 
+             </div>  
         </form>
     )
 }

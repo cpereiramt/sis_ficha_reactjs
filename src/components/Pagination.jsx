@@ -13,7 +13,6 @@ function Pagination(props) {
         allRowsActive.map(element => element.removeAttribute('id', 'selected_TableRow'))
         const selectedButton =  document.getElementsByName(event.target.name);
         selectedButton[0].setAttribute('id','selectedButton');
-        console.log(props.function(selectedButton[0].name));
         props.functionTable({   
             codlocal: " ",
             cpf: " ",
