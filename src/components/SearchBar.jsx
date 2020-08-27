@@ -11,6 +11,9 @@ function SearchBar() {
                     Nome Servidor
                 </option>
                 <option>
+                    Matricula
+                </option>
+                <option>
                     CPF
                 </option>
             </select>

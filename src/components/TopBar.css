@@ -5,7 +5,7 @@
   background-color: rgb(157, 158, 160);
   padding: 0.2rem;
   width: 99vw;
-  height: 2.7rem;
+  height: 4.5rem;
 }
 
 #topbar-section {
@@ -16,10 +16,12 @@
 }
 
 #userPhoto {
-  width: 4vw;
-  height: 7vh;
+  width: 3.6vw;
+  height: 6vh;
+  margin-top: 2vh;
   margin-right: 1vw;
   margin-left: -1vw;
+  margin-bottom: 1vw;
   border-radius: 50%;
 }
 
@@ -27,7 +29,12 @@
     font-family: IBM Plex Sans Condensed;
     font-style: normal;
     font-weight: 600;
-    font-size: 1.3vw;
+    font-size: 1vw;
+    margin-top: 2vh;
     margin-right: 1vw;
     color: #000000;
+}
+
+#logout_button {
+  margin-top: 0.58vh;  
 }

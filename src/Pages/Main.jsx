@@ -106,32 +106,28 @@ function Main() {
         })
      },[filterLetter])     
   
-    return (
-       
-            <div id="body-div">
-             {isAuthenticated
-             ? isloading 
-                ? <> <TopBar data={isAuthenticated} user={user} />
-                <TableData loading={isloading}/>
-                <h1> </h1>
-                </> 
-                : <>
-               <TopBar data={isAuthenticated} user={user}/>
-               <TableData result={data} function={TableDataClick}/>
-          
-               <Pagination function={ChangeLetter} functionTable={TableDataClick} />
-               <FormData data={formData} formStatus={formStatus} setFormStatus={setFormStatus} function={changeFOrmStatusOnCancel}/>
-                {formStatus === "INITIAL" &&  
-               <div id="button-body"><Buttons style_id="btn_cadastrar" text="Cadastrar" function={changeFormStatusClick} formStatus={formStatus}></Buttons>
-               <Buttons style_id="btn_alterar" text="Alterar" function={changeFormStatusClick} formStatus={formStatus} ></Buttons>
-               <Buttons style_id="btn_excluir" text="Excluir" function={changeFormStatusClick} formStatus={formStatus} ></Buttons></div>}
-               </>  
-             : navigate('/',true) }   
-            
-             </div>
-           
-        
-    )
+     return (       
+        <div id="body-div">
+         { isloading
+            ? <> <TopBar data={isAuthenticated} user={user} />
+            <TableData loading={isloading}/>
+            <h1> </h1>
+            </> 
+            : <>
+           <TopBar data={isAuthenticated} user={user}/>
+           <TableData result={data} function={TableDataClick}/>          
+           <Pagination function={ChangeLetter} functionTable={TableDataClick} />
+           <FormData data={formData} formStatus={formStatus} setFormStatus={setFormStatus} function={changeFOrmStatusOnCancel}/>
+            {formStatus === "INITIAL" &&  
+           <div id="button-body"><Buttons style_id="btn_cadastrar" text="Cadastrar" function={changeFormStatusClick} formStatus={formStatus}></Buttons>
+           <Buttons style_id="btn_alterar" text="Alterar" function={changeFormStatusClick} formStatus={formStatus} ></Buttons>
+           <Buttons style_id="btn_excluir" text="Excluir" function={changeFormStatusClick} formStatus={formStatus} ></Buttons></div>}
+           </>  
+        }             
+         </div>       
+    
+)
+
 }
 
 export default Main
