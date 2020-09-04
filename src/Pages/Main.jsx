@@ -15,6 +15,7 @@ function Main() {
     const [data, setData] = useState([]);
     const [filterLetter, setFilterLetter] = useState("A");
     const [formStatus, setFormStatus ] = useState("INITIAL");
+    const [searchQuery, setSearchQuery] = useState({field:"nomeservidor", query:""})
     const [formData, setFormData] = useState(
         {   codlocal: " ",
             cpf: " ",
@@ -29,6 +30,7 @@ function Main() {
         }
     );
 
+    
     const ChangeLetter = (letter) => {
       setFilterLetter(letter);      
      }
@@ -106,6 +108,19 @@ function Main() {
         })
      },[filterLetter])     
   
+
+    useEffect(() => {
+        fetch(`http://172.16.104.97:3002/fichas/${searchQuery.field}/${searchQuery.query}`)
+        .then(response =>
+            {
+            setIsLoading(true);
+           return response.json()})
+        .then(data => { 
+            setIsLoading(false);
+            return setData(data);                   
+        })
+    }, [searchQuery])
+
      return (       
         <div id="body-div">
          { isloading
@@ -114,7 +129,7 @@ function Main() {
             <h1> </h1>
             </> 
             : <>
-           <TopBar data={isAuthenticated} user={user}/>
+           <TopBar data={isAuthenticated} user={user} state={setSearchQuery}/>
            <TableData result={data} function={TableDataClick}/>          
            <Pagination function={ChangeLetter} functionTable={TableDataClick} />
            <FormData data={formData} formStatus={formStatus} setFormStatus={setFormStatus} function={changeFOrmStatusOnCancel}/>

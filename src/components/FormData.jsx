@@ -38,13 +38,13 @@ function FormData(props) {
         else {
             setEnabled(true); 
         }
-    }, [data, props.formStatus ])
+    }, [ props.formStatus ])
 
     useEffect(() => {        
             fetch('http://172.16.104.97:3002/estantes')
             .then(response => response.json())
             .then(estantesData => setEstantes(estantesData))   
-   }, [props.formStatus])
+   }, [ props.formStatus])
     
    const saveRegister = () => { 
        
