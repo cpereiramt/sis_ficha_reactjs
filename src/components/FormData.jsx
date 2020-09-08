@@ -43,7 +43,7 @@ function FormData(props) {
             fetch('http://localhost:3002/estantes')
             .then(response => response.json())
             .then(estantesData => setEstantes(estantesData))   
-   }, [ props.formStatus, estante])
+   }, [ props.formStatus])
     
    const saveRegister = () => { 
        
