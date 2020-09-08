@@ -4,7 +4,7 @@ import LupaIcon from '../images/LupaIcon.png'
 
 function SearchBar(props) {
     const [input, setInput ] = useState(" ");
-    const [drop, setDrop] = useState("cpf");
+    const [drop, setDrop] = useState("nomeservidor");
     const handleSearchDropChange = (event) => {
       setDrop(event.target.value);
     }
@@ -15,8 +15,9 @@ function SearchBar(props) {
     const send_search = (fieldLocal,queryLocal) => {
         if(queryLocal === " ") {
             alert("Preencha as informações para consulta !") ;
-        } else {         
-        props.query({field:fieldLocal, query:queryLocal});
+        } else {     
+         console.log(fieldLocal, queryLocal);       
+        props.query({field:fieldLocal, query:queryLocal.trim()});
     }
 }
 
