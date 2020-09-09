@@ -15,10 +15,8 @@ function SearchBar(props) {
     const send_search = (fieldLocal,queryLocal) => {
         if(queryLocal === " ") {
             alert("Preencha as informações para consulta !") ;
-        } else {     
-         console.log(fieldLocal, queryLocal);     
-        props.query({field:fieldLocal, query:queryLocal.trim()});
-        props.handleSearchClick();
+        } else {
+        props.handleSearchClick(fieldLocal, queryLocal);
     }
 }
 

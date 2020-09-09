@@ -109,8 +109,8 @@ function Main() {
      },[filterLetter])     
   
 
-const handleSearchClick = async () => {
-        await fetch(`http://localhost:3002/search/fichas/${searchQuery.field}/${searchQuery.query}`)
+const handleSearchClick = async (field, input) => {
+        await fetch(`http://localhost:3002/search/fichas/${field}/${input}`)
         .then(response =>
             {
             setIsLoading(true);
@@ -126,6 +126,7 @@ const handleSearchClick = async () => {
             window.location.reload(false);
             return alert("Erro durante sua solicitação !" + response)
            })
+           setSearchQuery({field: field, query:input})
     }
 
      return (       
