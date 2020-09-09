@@ -9,7 +9,7 @@ function TopBar(props) {
 
     return (
         <div id="topbar-body">
-       < SearchBar query={props.state}/>
+       < SearchBar query={props.state} handleSearchClick={props.function}/>
         <div id="topbar-section">
           <img id="userPhoto" src={userPhoto}  alt=""/> 
           <h2 id="userName"> UserName </h2>

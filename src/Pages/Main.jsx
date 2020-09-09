@@ -109,8 +109,8 @@ function Main() {
      },[filterLetter])     
   
 
-    useEffect(() => {
-        fetch(`http://localhost:3002/search/fichas/${searchQuery.field}/${searchQuery.query}`)
+const handleSearchClick = async () => {
+        await fetch(`http://localhost:3002/search/fichas/${searchQuery.field}/${searchQuery.query}`)
         .then(response =>
             {
             setIsLoading(true);
@@ -126,7 +126,7 @@ function Main() {
             window.location.reload(false);
             return alert("Erro durante sua solicitação !" + response)
            })
-    }, [searchQuery])
+    }
 
      return (       
         <div id="body-div">
@@ -136,7 +136,7 @@ function Main() {
             <h1> </h1>
             </> 
             : <>
-           <TopBar data={isAuthenticated} user={user} state={setSearchQuery}/>
+           <TopBar data={isAuthenticated} user={user} state={setSearchQuery} function={handleSearchClick}/>
            <TableData result={data} function={TableDataClick}/>          
            <Pagination function={ChangeLetter} functionTable={TableDataClick} />
            <FormData data={formData} formStatus={formStatus} setFormStatus={setFormStatus} function={changeFOrmStatusOnCancel}/>
