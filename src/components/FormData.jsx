@@ -40,7 +40,7 @@ function FormData(props) {
     }, [data.codlocal, data.cpf, data.dtnasc, data.matricula, data.nomemae, data.nomeservidor, data.numficha, data.orgaoexp, data.rg, props.formStatus])
 
     useEffect(() => {        
-            fetch('http://localhost:3002/estantes')
+            fetch('http://172.16.104.97:3002/estantes')
             .then(response => response.json())
             .then(estantesData => setEstantes(estantesData))   
    }, [ props.formStatus ])

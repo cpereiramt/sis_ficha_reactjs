@@ -97,7 +97,7 @@ function Main() {
     }
 
     useEffect(() => {
-         fetch('http://localhost:3002/fichas/' + filterLetter)
+         fetch('http://172.16.104.97:3002/fichas/' + filterLetter)
         .then(response =>
             {
             setIsLoading(true);
@@ -110,7 +110,7 @@ function Main() {
   
 
 const handleSearchClick = async (field, input) => {
-        await fetch(`http://localhost:3002/search/fichas/${field}/${input}`)
+        await fetch(`http://172.16.104.97:3002/search/fichas/${field}/${input}`)
         .then(response =>
             {
             setIsLoading(true);
