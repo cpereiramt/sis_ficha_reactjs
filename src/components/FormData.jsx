@@ -3,8 +3,7 @@ import {CreateRegister,AlterRegister,DeleteRegister} from '../helpers/ApiHelpers
 import './FormData.css';
 import {validateData } from '../helpers/Validation';
 
-function FormData(props) {
- 
+function FormData(props) { 
     const {data } = props ;
     const [numFicha, setNumFicha] = useState();
     const [matricula, setMatricula] = useState();
@@ -38,13 +37,13 @@ function FormData(props) {
         else {
             setEnabled(true); 
         }
-    }, [data, props.formStatus ])
+    }, [data.codlocal, data.cpf, data.dtnasc, data.matricula, data.nomemae, data.nomeservidor, data.numficha, data.orgaoexp, data.rg, props.formStatus])
 
     useEffect(() => {        
             fetch('http://172.16.104.97:3002/estantes')
             .then(response => response.json())
             .then(estantesData => setEstantes(estantesData))   
-   }, [props.formStatus])
+   }, [ props.formStatus ])
     
    const saveRegister = () => { 
        

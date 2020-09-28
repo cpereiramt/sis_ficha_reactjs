@@ -15,6 +15,7 @@ function Main() {
     const [data, setData] = useState([]);
     const [filterLetter, setFilterLetter] = useState("A");
     const [formStatus, setFormStatus ] = useState("INITIAL");
+    const [searchQuery, setSearchQuery] = useState({field:"nomeservidor", query:"A"})
     const [formData, setFormData] = useState(
         {   codlocal: " ",
             cpf: " ",
@@ -29,6 +30,7 @@ function Main() {
         }
     );
 
+    
     const ChangeLetter = (letter) => {
       setFilterLetter(letter);      
      }
@@ -106,6 +108,27 @@ function Main() {
         })
      },[filterLetter])     
   
+
+const handleSearchClick = async (field, input) => {
+        await fetch(`http://172.16.104.97:3002/search/fichas/${field}/${input}`)
+        .then(response =>
+            {
+            setIsLoading(true);
+           return response.json()})
+        .then(data => { 
+            setIsLoading(false);
+            if(data.length === 0 ) {
+               window.location.reload(false);
+              return alert("Nenhum resultado encontrado !")
+            }
+            return setData(data);                   
+        }).catch(response => {
+            window.location.reload(false);
+            return alert("Erro durante sua solicitação !" + response)
+           })
+           setSearchQuery({field: field, query:input})
+    }
+
      return (       
         <div id="body-div">
          { isloading
@@ -114,7 +137,7 @@ function Main() {
             <h1> </h1>
             </> 
             : <>
-           <TopBar data={isAuthenticated} user={user}/>
+           <TopBar data={isAuthenticated} user={user} state={setSearchQuery} function={handleSearchClick}/>
            <TableData result={data} function={TableDataClick}/>          
            <Pagination function={ChangeLetter} functionTable={TableDataClick} />
            <FormData data={formData} formStatus={formStatus} setFormStatus={setFormStatus} function={changeFOrmStatusOnCancel}/>

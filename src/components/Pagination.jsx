@@ -25,6 +25,7 @@ function Pagination(props) {
             rg: " ",
             uf: " "
         })
+        props.function(event.target.name);
      }
 
     return (
