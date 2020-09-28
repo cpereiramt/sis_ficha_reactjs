@@ -23,7 +23,8 @@ function Home(props) {
            <img id="brasao_inicio" src={brasao} alt=""/>
            <div id="div_body">
            <h1 id="Home_h1">Tela Inicial Sisficha !</h1>
-           <button id="Home_button" onClick={() => handleLogin()}>Login</button>
+           <button id="Home_button" onClick={() => handleLogin()}>Acessar para consulta</button>
+           <button id="Admin_button" onClick={() => handleLogin()}>Acessar como Administrador</button>
            </div>           
         </div>
     )
