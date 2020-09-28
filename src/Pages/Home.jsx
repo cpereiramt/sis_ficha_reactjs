@@ -3,7 +3,7 @@ import brasao from '../images/brasao_estado_cor.png'
 import './Home.css';
 import {navigate} from 'hookrouter';
 import useModal from '../hooks/useModal';
-import Modal from '../components/Modal';
+//import Modal from '../components/Modal';
 
 
 function Home(props) {
@@ -23,9 +23,9 @@ function Home(props) {
     }
     
     const handleAdminAcess = async () => {
-        toggle();      
+       /*  toggle();      
         setState(isShowing);
-        const password_admin = 'mtp@2020_123456'
+     */    const password_admin = 'mtp@2020_123456xyzoawQWEerefsdoIEmmmmdsdfsDFEWRWQERQWERSDFASDFASDFFEWRWE'
         const enteredSenha = prompt('Insira a senha do administrador para prossegir !')
         if( password_admin === enteredSenha ) {
          localStorage.setItem('isCommonUser',false);   
@@ -43,12 +43,12 @@ function Home(props) {
            <button class="Home_button" onClick={() => handleLogin()}>Acesso para consulta</button>
            <button class="Home_button" onClick={() => handleAdminAcess()}>Acessar como Administrador</button>
            </div>
-           <Modal
+          {/*  <Modal
            password = {password}
            setPassword = {setPassword}
            isShowing={isShowing}
            hide={toggle}
-          />          
+          />           */}
         </div>
     )
 }
