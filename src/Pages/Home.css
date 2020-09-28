@@ -28,7 +28,7 @@ align-items: center;
 color: #000000;
 }
 
-#Home_button {
+.Home_button {
   width: 8rem;
   margin-left: 1rem;  
   background: #429B34;
